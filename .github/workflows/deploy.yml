@@ -1,21 +1,24 @@
-name: Deploy to GitHub Pages
+name: Deploy to Hostinger
 
 on:
   push:
-    branches: ["master"] 
+    branches:
+      - master
 
 jobs:
   deploy:
+    name: Upload to Hosting
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./  
-          force_orphan: true 
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: public_html/
+          local-dir: ./
