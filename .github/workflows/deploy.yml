@@ -1,63 +1,21 @@
-name: Deploy to Hosting
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "main", "master" ]  
-  pull_request:
-    branches: [ "main", "master" ] 
+    branches: ["master"] 
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-    
+    permissions:
+      contents: write
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-    
-    - name: Setup Node.js (если нужен для сборки)
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-    
-    - name: Install dependencies (если есть package.json)
-      run: |
-        if [ -f package.json ]; then
-          npm ci
-        fi
-    
-    - name: Build project (если есть скрипт сборки)
-      run: |
-        if [ -f package.json ]; then
-          npm run build --if-present
-        fi
-    
-    - name: Deploy to FTP Hosting
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-      with:
-        server: ${{ secrets.FTP_SERVER }}        
-        username: ${{ secrets.FTP_USERNAME }}    
-        password: ${{ secrets.FTP_PASSWORD }}    
-        local-dir: ./                           
-        server-dir: /public_html/          
-        dangerous-clean-slate: true              
-
-    - name: Deploy to Netlify (альтернативный вариант)
-      if: false  
-      uses: nwtgck/actions-netlify@v2.0
-      with:
-        publish-dir: './'
-        production-branch: main
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        deploy-message: "Deploy from GitHub Actions"
-      env:
-        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-
-    - name: Deploy to Vercel (альтернативный вариант)
-      if: false  # замените на true если используете Vercel
-      uses: amondnet/vercel-action@v20
-      with:
-        vercel-token: ${{ secrets.VERCEL_TOKEN }}
-        vercel-org-id: ${{ secrets.ORG_ID }}
-        vercel-project-id: ${{ secrets.PROJECT_ID }}
-        vercel-args: '--prod'
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./  
+          force_orphan: true 
