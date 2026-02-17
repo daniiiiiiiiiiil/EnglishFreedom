@@ -1,0 +1,479 @@
+/* Основной контейнер теста */
+.test-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Заголовок теста */
+.test-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.test-header h1 {
+    font-size: 2.2rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.test-subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Прогресс теста */
+.test-progress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.5rem auto;
+    max-width: 500px;
+}
+
+.progress-bar-container {
+    width: 100%;
+    max-width: 400px;
+    background: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), #a233ff);
+    border-radius: 10px;
+    transition: width 0.5s ease-in-out;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Основная карточка вопроса */
+.question-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 2rem;
+    border: 1px solid #333;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.question-header h2 {
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin: 0;
+}
+
+.difficulty-badge {
+    background: var(--bg-section);
+    padding: 0.5rem 1.25rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.difficulty-badge.easy {
+    background: rgba(16, 185, 129, 0.2);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+}
+
+.difficulty-badge.medium {
+    background: rgba(245, 158, 11, 0.2);
+    color: var(--warning);
+    border: 1px solid var(--warning);
+}
+
+.difficulty-badge.hard {
+    background: rgba(239, 68, 68, 0.2);
+    color: var(--danger);
+    border: 1px solid var(--danger);
+}
+
+/* Вопрос */
+.question-content {
+    background: var(--bg-section);
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    margin: 2rem 0;
+    border: 1px solid #444;
+    text-align: center;
+}
+
+.question-text {
+    font-size: 1.4rem;
+    color: var(--text-main);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Варианты ответов */
+.answer-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+    .answer-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+.answer-option {
+    padding: 1.5rem;
+    border: 2px solid #444;
+    border-radius: var(--radius);
+    background: transparent;
+    color: var(--text-main);
+    cursor: pointer;
+    font-size: 1.1rem;
+    text-align: left;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.answer-option:hover {
+    border-color: var(--accent);
+    background: rgba(185, 76, 255, 0.05);
+    transform: translateY(-2px);
+}
+
+.answer-option.selected {
+    border-color: var(--accent);
+    background: rgba(185, 76, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(185, 76, 255, 0.2);
+}
+
+.answer-option.correct {
+    border-color: var(--secondary);
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.answer-option.incorrect {
+    border-color: var(--danger);
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.option-label {
+    font-weight: 600;
+    color: var(--accent);
+    margin-right: 0.5rem;
+}
+
+/* Кнопки навигации */
+.question-navigation {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    padding: 0.875rem 2rem;
+    border: 2px solid #444;
+    border-radius: var(--radius);
+    background: transparent;
+    color: var(--text-main);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    min-width: 180px;
+}
+
+.nav-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.nav-btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
+.nav-btn.primary:hover {
+    background: #a233ff;
+    border-color: #a233ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(185, 76, 255, 0.3);
+}
+
+/* Панель прогресса и навигации */
+.test-info-panel {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .test-info-panel {
+        flex-direction: column;
+    }
+}
+
+/* Панель прогресса */
+.progress-panel {
+    flex: 1;
+    min-width: 250px;
+}
+
+.progress-panel h3 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.progress-stats {
+    margin-top: 1rem;
+}
+
+.progress-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #333;
+}
+
+.progress-stat:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.stat-label {
+    color: var(--text-muted);
+}
+
+.stat-value {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+/* Навигация по вопросам */
+.navigation-panel {
+    flex: 2;
+    min-width: 300px;
+}
+
+.navigation-panel h3 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.questions-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.question-number {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+}
+
+.question-number.answered {
+    background: var(--secondary);
+    color: white;
+}
+
+.question-number.current {
+    background: var(--accent);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(185, 76, 255, 0.3);
+}
+
+.question-number.pending {
+    background: #2a2a2a;
+    color: var(--text-muted);
+    border: 1px solid #444;
+}
+
+.question-number:hover {
+    transform: translateY(-2px);
+}
+
+/* Легенда вопросов */
+.questions-legend {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+}
+
+.legend-color.answered {
+    background: var(--secondary);
+}
+
+.legend-color.current {
+    background: var(--accent);
+}
+
+.legend-color.pending {
+    background: #2a2a2a;
+    border: 1px solid #444;
+}
+
+.legend-label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Таймер */
+.timer-container {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 1rem 1.5rem;
+    border: 1px solid #333;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: auto;
+}
+
+.timer-icon {
+    font-size: 1.2rem;
+}
+
+.timer-value {
+    color: var(--danger);
+    font-weight: 700;
+    font-size: 1.3rem;
+    font-family: monospace;
+}
+
+/* Кнопка завершения теста */
+.finish-test-section {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #333;
+}
+
+.finish-btn {
+    padding: 1rem 3rem;
+    background: var(--danger);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.finish-btn:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.finish-btn::before {
+    content: "⚠️";
+    font-size: 1.2rem;
+}
+
+/* Результаты теста */
+.test-results {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.result-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.result-icon.passed {
+    color: var(--secondary);
+}
+
+.result-icon.failed {
+    color: var(--danger);
+}
+
+.result-score {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin: 1.5rem 0;
+    background: linear-gradient(135deg, var(--accent), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.result-message {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.results-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.results-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}

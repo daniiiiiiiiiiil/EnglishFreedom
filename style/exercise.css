@@ -1,0 +1,464 @@
+/* Основной заголовок */
+.exercise-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.exercise-header h1 {
+    font-size: 2.5rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--accent), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Контейнер для упражнений */
+.exercise-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Карточка упражнения */
+.exercise-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    border: 1px solid #333;
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.3s;
+}
+
+.exercise-card:hover {
+    transform: translateY(-5px);
+}
+
+.exercise-header-content {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.exercise-title {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.exercise-description {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* Типы упражнений */
+.exercise-type {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    background: rgba(185, 76, 255, 0.1);
+    color: var(--accent);
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(185, 76, 255, 0.3);
+}
+
+/* Multiple Choice Exercise */
+.multiple-choice .question-text {
+    background: var(--bg-section);
+    padding: 2rem;
+    border-radius: var(--radius);
+    margin: 2rem 0;
+    border: 1px solid #444;
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--text-main);
+}
+
+.choice-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+    .choice-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+.choice-option {
+    padding: 1.5rem;
+    border: 2px solid #444;
+    border-radius: var(--radius);
+    background: transparent;
+    color: var(--text-main);
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.choice-option:hover {
+    border-color: var(--accent);
+    background: rgba(185, 76, 255, 0.05);
+    transform: translateY(-2px);
+}
+
+.choice-option.selected {
+    border-color: var(--accent);
+    background: rgba(185, 76, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(185, 76, 255, 0.2);
+}
+
+.choice-option.correct {
+    border-color: var(--secondary);
+    background: rgba(16, 185, 129, 0.1);
+    animation: pulse 0.5s ease-in-out;
+}
+
+.choice-option.incorrect {
+    border-color: var(--danger);
+    background: rgba(239, 68, 68, 0.1);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Fill in the Blank Exercise */
+.fill-blank .question-container {
+    background: var(--bg-section);
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    margin: 2rem 0;
+    border: 1px solid #444;
+    text-align: center;
+}
+
+.sentence-container {
+    font-size: 1.5rem;
+    color: var(--text-main);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.blank-input {
+    width: 150px;
+    padding: 0.75rem;
+    font-size: 1.2rem;
+    text-align: center;
+    border: 2px solid #444;
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    color: var(--text-main);
+    margin: 0 0.5rem;
+    transition: all 0.3s;
+}
+
+.blank-input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(185, 76, 255, 0.1);
+}
+
+.blank-input.correct {
+    border-color: var(--secondary);
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.blank-input.incorrect {
+    border-color: var(--danger);
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.hint-text {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+/* Matching Game Exercise */
+.matching-game .game-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+    .matching-game .game-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+.game-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.game-column h3 {
+    text-align: center;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--accent);
+}
+
+.word-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.draggable-word {
+    padding: 1.25rem;
+    background: var(--accent);
+    color: white;
+    border-radius: var(--radius);
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: grab;
+    user-select: none;
+    transition: all 0.3s;
+    position: relative;
+    border: 2px solid var(--accent);
+}
+
+.draggable-word:hover {
+    background: #a233ff;
+    border-color: #a233ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(185, 76, 255, 0.3);
+}
+
+.draggable-word.dragging {
+    opacity: 0.7;
+    cursor: grabbing;
+}
+
+.draggable-word.matched {
+    background: var(--secondary);
+    border-color: var(--secondary);
+    cursor: default;
+}
+
+.drop-zone {
+    padding: 1.25rem;
+    background: var(--bg-section);
+    border: 2px dashed #444;
+    border-radius: var(--radius);
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.drop-zone:hover {
+    border-color: var(--accent);
+    background: rgba(185, 76, 255, 0.05);
+}
+
+.drop-zone.occupied {
+    border: 2px solid var(--accent);
+    background: rgba(185, 76, 255, 0.1);
+}
+
+.drop-zone.correct-match {
+    border-color: var(--secondary);
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.drop-zone.incorrect-match {
+    border-color: var(--danger);
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.drop-placeholder {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Кнопки упражнений */
+.exercise-actions {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #333;
+}
+
+.check-btn {
+    padding: 1rem 3rem;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.check-btn:hover {
+    background: #a233ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(185, 76, 255, 0.3);
+}
+
+.check-btn::before {
+    content: "✓";
+    font-size: 1.2rem;
+}
+
+.check-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Подсказки для игры на совпадение */
+.matching-hints {
+    text-align: center;
+    margin: 1rem 0 2rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.hint-words {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.hint-word {
+    padding: 0.5rem 1rem;
+    background: var(--bg-section);
+    border-radius: 999px;
+    font-size: 0.9rem;
+}
+
+/* Кнопка возврата к уроку */
+.return-section {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #333;
+}
+
+.return-btn {
+    padding: 1rem 3rem;
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+}
+
+.return-btn:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(185, 76, 255, 0.3);
+}
+
+.return-btn::before {
+    content: "←";
+    font-size: 1.2rem;
+}
+
+/* Результат упражнения */
+.exercise-result {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-correct {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid var(--secondary);
+    color: var(--secondary);
+}
+
+.result-incorrect {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid var(--danger);
+    color: var(--danger);
+}
+
+.result-message {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.result-details {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Прогресс упражнений */
+.exercise-progress {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.progress-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #444;
+    transition: all 0.3s;
+}
+
+.progress-dot.completed {
+    background: var(--secondary);
+    transform: scale(1.2);
+}
+
+.progress-dot.current {
+    background: var(--accent);
+    transform: scale(1.2);
+    box-shadow: 0 0 8px rgba(185, 76, 255, 0.5);
+}

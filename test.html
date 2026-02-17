@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест - EnglishFreedom</title>
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/button.css">
+    <link rel="stylesheet" href="style/components.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/test.css">
+</head>
+<body>
+    <header class="unified-header">
+        <a href="index.html" class="logo">⭐ EnglishFreedom</a>
+        <nav>
+            <a href="dashboard.html" id="nav-dashboard">Кабинет</a>
+            <a href="courses.html" id="nav-courses">Курсы</a>
+            <a href="vocabulary.html" id="nav-vocabulary">Словарь</a>
+            <a href="progress.html" id="nav-progress">Прогресс</a>
+            <a href="test.html" id="nav-test" class="active">Тест</a>
+        </nav>
+        <div class="user-area">
+            <div class="timer-container">
+                <span class="timer-icon">⏱️</span>
+                <span class="timer-value" id="test-timer">14:32</span>
+            </div>
+            <div class="auth-buttons">
+                <a href="index.html" class="btn btn-outline">Выйти</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="test-container">
+            <!-- Заголовок теста -->
+            <div class="test-header">
+                <h1>Тест по модулю 1: Основы</h1>
+                <div class="test-subtitle">Курс: Beginner English (A1)</div>
+                
+                <div class="test-progress">
+                    <div class="progress-bar-container">
+                        <div class="progress-fill" style="width: 40%"></div>
+                    </div>
+                    <div class="progress-info">
+                        <span>Прогресс</span>
+                        <span>Вопрос 4 из 10</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Карточка вопроса -->
+            <div class="card question-card">
+                <div class="question-header">
+                    <h2>Вопрос 4: Выбор правильного варианта</h2>
+                    <div class="difficulty-badge medium">
+                        <span>🟡</span>
+                        Средняя сложность
+                    </div>
+                </div>
+                
+                <div class="question-content">
+                    <p class="question-text">Choose the correct translation for: "Мой друг"</p>
+                </div>
+                
+                <!-- Варианты ответов -->
+                <div class="answer-options" id="answer-options">
+                    <button class="answer-option" data-option="A">
+                        <span class="option-label">A)</span> My friend
+                    </button>
+                    <button class="answer-option" data-option="B">
+                        <span class="option-label">B)</span> My book
+                    </button>
+                    <button class="answer-option" data-option="C">
+                        <span class="option-label">C)</span> My house
+                    </button>
+                    <button class="answer-option" data-option="D">
+                        <span class="option-label">D)</span> My car
+                    </button>
+                </div>
+                
+                <!-- Навигация по вопросам -->
+                <div class="question-navigation">
+                    <div class="navigation-buttons">
+                        <button class="nav-btn" id="skip-btn">
+                            Пропустить вопрос
+                        </button>
+                        <button class="nav-btn primary" id="next-btn">
+                            Следующий вопрос →
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Панель прогресса и навигации -->
+            <div class="test-info-panel">
+                <!-- Прогресс теста -->
+                <div class="card progress-panel">
+                    <h3>Прогресс теста</h3>
+                    <div class="progress-stats">
+                        <div class="progress-stat">
+                            <span class="stat-label">Правильные ответы:</span>
+                            <span class="stat-value">3/10</span>
+                        </div>
+                        <div class="progress-stat">
+                            <span class="stat-label">Проходной балл:</span>
+                            <span class="stat-value">7/10</span>
+                        </div>
+                        <div class="progress-stat">
+                            <span class="stat-label">Оставшееся время:</span>
+                            <span class="stat-value" id="remaining-time">14:32</span>
+                        </div>
+                        <div class="progress-stat">
+                            <span class="stat-label">Набрано баллов:</span>
+                            <span class="stat-value">30%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Навигация по вопросам -->
+                <div class="card navigation-panel">
+                    <h3>Навигация по вопросам</h3>
+                    <div class="questions-grid" id="questions-nav">
+                        <div class="question-number answered">1</div>
+                        <div class="question-number answered">2</div>
+                        <div class="question-number answered">3</div>
+                        <div class="question-number current">4</div>
+                        <div class="question-number pending">5</div>
+                        <div class="question-number pending">6</div>
+                        <div class="question-number pending">7</div>
+                        <div class="question-number pending">8</div>
+                        <div class="question-number pending">9</div>
+                        <div class="question-number pending">10</div>
+                    </div>
+                    
+                    <div class="questions-legend">
+                        <div class="legend-item">
+                            <div class="legend-color answered"></div>
+                            <span class="legend-label">Отвечено</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color current"></div>
+                            <span class="legend-label">Текущий</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color pending"></div>
+                            <span class="legend-label">Осталось</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Кнопка завершения теста -->
+            <div class="finish-test-section">
+                <button class="finish-btn" id="finish-test-btn">
+                    Завершить тест досрочно
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="unified-footer">
+        <div class="footer-content">
+            <div>
+                <h4>EnglishFreedom</h4>
+                <p>Проверьте свои знания с нашими тестами</p>
+            </div>
+            <div>
+                <h4>Тестирование</h4>
+                <a href="test.html">Начать тест</a>
+                <a href="courses.html">Тесты по курсам</a>
+                <a href="#">Пробные тесты</a>
+                <a href="#">Сертификаты</a>
+            </div>
+            <div>
+                <h4>Подготовка</h4>
+                <a href="vocabulary.html">Словарь</a>
+                <a href="lesson.html">Уроки</a>
+                <a href="exercise.html">Упражнения</a>
+                <a href="#">Методика обучения</a>
+            </div>
+            <div>
+                <h4>Поддержка</h4>
+                <a href="#">FAQ</a>
+                <a href="#">Советы по тестированию</a>
+                <a href="#">Контакты</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 EnglishFreedom. Все права защищены.
+        </div>
+    </footer>
+
+
+</body>
+</html>

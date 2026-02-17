@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задания - EnglishFreedom</title>
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/button.css">
+    <link rel="stylesheet" href="style/components.css">
+    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="style/exercise.css">
+</head>
+<body>
+    <header class="unified-header">
+        <a href="index.html" class="logo">⭐ EnglishFreedom</a>
+        <nav>
+            <a href="dashboard.html" id="nav-dashboard">Кабинет</a>
+            <a href="courses.html" id="nav-courses">Курсы</a>
+            <a href="lesson.html" id="nav-lesson">Уроки</a>
+            <a href="exercise.html" id="nav-exercise" class="active">Задания</a>
+            <a href="test.html" id="nav-test">Тесты</a>
+        </nav>
+        <div class="user-area">
+            <div class="user-info">
+                <div class="user-avatar">А</div>
+                <div>Александр</div>
+                <div class="user-role student">Студент</div>
+            </div>
+            <div class="auth-buttons">
+                <a href="index.html" class="btn btn-outline">Выйти</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Заголовок -->
+        <div class="exercise-header">
+            <h1>Интерактивные задания</h1>
+            <p style="color: var(--text-muted); font-size: 1.1rem;">Практикуйте английский с помощью различных типов упражнений</p>
+            
+            <!-- Прогресс упражнений -->
+            <div class="exercise-progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot current"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+            </div>
+        </div>
+        
+        <div class="exercise-container">
+            <div class="card exercise-card multiple-choice">
+                <div class="exercise-header-content">
+                    <span class="exercise-type">Multiple Choice</span>
+                    <h2 class="exercise-title">Выберите правильный перевод</h2>
+                    <p class="exercise-description">Выберите правильный вариант перевода для английского слова</p>
+                </div>
+                
+                <div class="question-text">
+                    Выберите правильный перевод для слова "book":
+                </div>
+                
+                <div class="choice-options" id="choice-options-1">
+                    <button class="choice-option" data-value="стол">стол</button>
+                    <button class="choice-option" data-value="книга">книга</button>
+                    <button class="choice-option" data-value="ручка">ручка</button>
+                    <button class="choice-option" data-value="окно">окно</button>
+                </div>
+                
+                <div class="exercise-actions">
+                    <button class="check-btn" id="check-choice-1">Проверить ответ</button>
+                </div>
+                
+                <div class="exercise-result" id="result-1" style="display: none;"></div>
+            </div>
+            
+            <div class="card exercise-card fill-blank">
+                <div class="exercise-header-content">
+                    <span class="exercise-type">Fill in the Blank</span>
+                    <h2 class="exercise-title">Заполните пропуск</h2>
+                    <p class="exercise-description">Заполните пропуск правильной формой слова</p>
+                </div>
+                
+                <div class="question-container">
+                    <div class="sentence-container">
+                        <span>I</span>
+                        <input type="text" class="blank-input" id="blank-input" placeholder="_____">
+                        <span>to school every day.</span>
+                    </div>
+                    <p class="hint-text">(go / goes / going)</p>
+                </div>
+                
+                <div class="exercise-actions">
+                    <button class="check-btn" id="check-blank">Проверить ответ</button>
+                </div>
+                
+                <div class="exercise-result" id="result-2" style="display: none;"></div>
+            </div>
+            
+            <div class="card exercise-card matching-game">
+                <div class="exercise-header-content">
+                    <span class="exercise-type">Matching Game</span>
+                    <h2 class="exercise-title">Игра на совпадение</h2>
+                    <p class="exercise-description">Сопоставьте английские слова с русскими переводами</p>
+                </div>
+                
+                <div class="matching-hints">
+                    <p>Перетащите английские слова к соответствующим переводам</p>
+                    <div class="hint-words">
+                        <span class="hint-word">дом</span>
+                        <span class="hint-word">машина</span>
+                        <span class="hint-word">яблоко</span>
+                    </div>
+                </div>
+                
+                <div class="game-container">
+                    <!-- Английские слова -->
+                    <div class="game-column">
+                        <h3>Английские слова</h3>
+                        <div class="word-list" id="english-words">
+                            <div class="draggable-word" draggable="true" data-word="apple" data-match="яблоко">
+                                apple
+                            </div>
+                            <div class="draggable-word" draggable="true" data-word="house" data-match="дом">
+                                house
+                            </div>
+                            <div class="draggable-word" draggable="true" data-word="car" data-match="машина">
+                                car
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Русские переводы -->
+                    <div class="game-column">
+                        <h3>Русские переводы</h3>
+                        <div class="word-list" id="russian-translations">
+                            <div class="drop-zone" data-expected="яблоко">
+                                <span class="drop-placeholder">Перетащите сюда</span>
+                            </div>
+                            <div class="drop-zone" data-expected="дом">
+                                <span class="drop-placeholder">Перетащите сюда</span>
+                            </div>
+                            <div class="drop-zone" data-expected="машина">
+                                <span class="drop-placeholder">Перетащите сюда</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="exercise-actions">
+                    <button class="check-btn" id="check-matching">Проверить ответ</button>
+                </div>
+                
+                <div class="exercise-result" id="result-3" style="display: none;"></div>
+            </div>
+        </div>
+        
+        <!-- Кнопка возврата к уроку -->
+        <div class="return-section">
+            <a href="lesson.html" class="return-btn">Вернуться к уроку</a>
+        </div>
+    </main>
+
+    <footer class="unified-footer">
+        <div class="footer-content">
+            <div>
+                <h4>EnglishFreedom</h4>
+                <p>Практикуйте английский с интерактивными заданиями</p>
+            </div>
+            <div>
+                <h4>Типы заданий</h4>
+                <a href="#">Multiple Choice</a>
+                <a href="#">Fill in the Blank</a>
+                <a href="#">Matching Game</a>
+                <a href="#">Writing Practice</a>
+            </div>
+            <div>
+                <h4>Обучение</h4>
+                <a href="courses.html">Курсы</a>
+                <a href="lesson.html">Уроки</a>
+                <a href="test.html">Тесты</a>
+                <a href="vocabulary.html">Словарь</a>
+            </div>
+            <div>
+                <h4>Поддержка</h4>
+                <a href="#">Советы по обучению</a>
+                <a href="#">FAQ</a>
+                <a href="#">Контакты</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 EnglishFreedom. Все права защищены.
+        </div>
+    </footer>
+</body>
+</html>

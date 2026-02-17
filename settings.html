@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройки - EnglishFreedom</title>
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/button.css">
+    <link rel="stylesheet" href="style/components.css">
+    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="style/settings.css">
+</head>
+<body>
+    <header class="unified-header">
+        <a href="index.html" class="logo">⭐ EnglishFreedom</a>
+        <nav>
+            <a href="dashboard.html" id="nav-dashboard">Кабинет</a>
+            <a href="courses.html" id="nav-courses">Курсы</a>
+            <a href="vocabulary.html" id="nav-vocabulary">Словарь</a>
+            <a href="progress.html" id="nav-progress">Прогресс</a>
+            <a href="settings.html" id="nav-settings" class="active">Настройки</a>
+        </nav>
+        <div class="user-area">
+            <div class="user-info">
+                <div class="user-avatar">АС</div>
+                <div>Александр</div>
+                <div class="user-role student">Студент</div>
+            </div>
+            <div class="auth-buttons">
+                <a href="index.html" class="btn btn-outline">Выйти</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Заголовок -->
+        <div class="settings-header">
+            <h1>Настройки профиля</h1>
+        </div>
+        
+        <!-- Основные настройки -->
+        <div class="settings-container">
+            <!-- Навигация -->
+            <div class="card settings-nav">
+                <h3>Навигация</h3>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#profile" class="nav-link active">
+                            <span class="nav-icon">👤</span>
+                            <span>Профиль</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#security" class="nav-link">
+                            <span class="nav-icon">🔒</span>
+                            <span>Безопасность</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#notifications" class="nav-link">
+                            <span class="nav-icon">🔔</span>
+                            <span>Уведомления</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#appearance" class="nav-link">
+                            <span class="nav-icon">🎨</span>
+                            <span>Внешний вид</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#danger" class="nav-link">
+                            <span class="nav-icon">⚠️</span>
+                            <span>Опасная зона</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Основная панель -->
+            <div class="settings-panel" id="profile">
+                <h2>Профиль</h2>
+                
+                <!-- Аватар -->
+                <div class="profile-avatar">
+                    <div class="avatar-container">
+                        <div class="avatar-image">
+                            АС
+                            <div class="avatar-badge">+</div>
+                        </div>
+                    </div>
+                    <div class="avatar-actions">
+                        <button class="avatar-btn primary">
+                            <span>🖼️</span>
+                            Изменить фото
+                        </button>
+                        <button class="avatar-btn danger">
+                            <span>🗑️</span>
+                            Удалить фото
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Форма профиля -->
+                <form class="settings-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Имя</label>
+                            <input type="text" id="name" class="form-control" value="Александр Смирнов">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" value="alex@example.com">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="level">Уровень английского</label>
+                            <select id="level" class="form-control">
+                                <option>A1 - Beginner</option>
+                                <option selected>A2 - Elementary</option>
+                                <option>B1 - Intermediate</option>
+                                <option>B2 - Upper-Intermediate</option>
+                                <option>C1 - Advanced</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="language">Язык интерфейса</label>
+                            <select id="language" class="form-control">
+                                <option selected>Русский</option>
+                                <option>English</option>
+                                <option>Español</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">
+                            Сохранить изменения
+                        </button>
+                        <button type="button" class="btn btn-outline">
+                            Отмена
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Безопасность -->
+        <div class="card security-panel" id="security">
+            <h2>Безопасность</h2>
+            <form class="security-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="current-password">Текущий пароль</label>
+                        <input type="password" id="current-password" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="new-password">Новый пароль</label>
+                        <input type="password" id="new-password" class="form-control">
+                        <small style="color: var(--text-muted); font-size: 0.85rem;">Минимум 8 символов</small>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm-new-password">Подтвердите новый пароль</label>
+                    <input type="password" id="confirm-new-password" class="form-control">
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        Сменить пароль
+                    </button>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Уведомления -->
+        <div class="card settings-panel" id="notifications">
+            <h2>Уведомления</h2>
+            <div class="notification-settings">
+                <div class="notification-item">
+                    <div class="switch-label">
+                        <div>Email уведомления</div>
+                        <div class="switch-description">Получать уведомления о новых уроках и курсах</div>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="notification-item">
+                    <div class="switch-label">
+                        <div>Напоминания о занятиях</div>
+                        <div class="switch-description">Ежедневные напоминания о тренировках</div>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="notification-item">
+                    <div class="switch-label">
+                        <div>Новости платформы</div>
+                        <div class="switch-description">Уведомления о новых функциях и обновлениях</div>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Внешний вид -->
+        <div class="card settings-panel" id="appearance">
+            <h2>Внешний вид</h2>
+            <div class="appearance-settings">
+                <div class="appearance-item">
+                    <div class="switch-label">
+                        <div>Тёмная тема</div>
+                        <div class="switch-description">Использовать тёмную цветовую схему</div>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="appearance-item">
+                    <div>Тема оформления</div>
+                    <div class="theme-options">
+                        <div class="theme-option active">
+                            <div class="theme-preview theme-dark"></div>
+                            <div>Тёмная</div>
+                        </div>
+                        <div class="theme-option">
+                            <div class="theme-preview theme-light"></div>
+                            <div>Светлая</div>
+                        </div>
+                        <div class="theme-option">
+                            <div class="theme-preview theme-auto"></div>
+                            <div>Авто</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Опасная зона -->
+        <div class="danger-zone" id="danger">
+            <h2>Опасная зона</h2>
+            <div class="danger-warning">
+                Удаление аккаунта - необратимое действие. Все ваши данные, прогресс и история обучения будут удалены без возможности восстановления.
+            </div>
+            <button class="delete-btn">
+                Удалить мой аккаунт
+            </button>
+        </div>
+    </main>
+
+    <footer class="unified-footer">
+        <div class="footer-content">
+            <div>
+                <h4>EnglishFreedom</h4>
+                <p>Настройте платформу под свои предпочтения</p>
+            </div>
+            <div>
+                <h4>Профиль</h4>
+                <a href="dashboard.html">Обзор</a>
+                <a href="progress.html">Прогресс</a>
+                <a href="settings.html">Настройки</a>
+                <a href="vocabulary.html">Словарь</a>
+            </div>
+            <div>
+                <h4>Обучение</h4>
+                <a href="courses.html">Курсы</a>
+                <a href="lesson.html">Уроки</a>
+                <a href="test.html">Тесты</a>
+                <a href="exercise.html">Упражнения</a>
+            </div>
+            <div>
+                <h4>Поддержка</h4>
+                <a href="#">FAQ</a>
+                <a href="#">Контакты</a>
+                <a href="#">О нас</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 EnglishFreedom. Все права защищены.
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Навигационные ссылки
+            const navLinks = document.querySelectorAll('.nav-link');
+            const panels = document.querySelectorAll('.settings-panel, .security-panel, .danger-zone');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Удаляем активный класс у всех ссылок
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    
+                    // Добавляем активный класс к текущей ссылке
+                    this.classList.add('active');
+                    
+                    // Скрываем все панели
+                    panels.forEach(panel => {
+                        panel.style.display = 'none';
+                    });
+                    
+                    // Показываем выбранную панель
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetPanel = document.getElementById(targetId);
+                    if (targetPanel) {
+                        targetPanel.style.display = 'block';
+                    }
+                });
+            });
+            
+            // Кнопка удаления аккаунта
+            const deleteBtn = document.querySelector('.delete-btn');
+            if (deleteBtn) {
+                deleteBtn.addEventListener('click', function() {
+                    if (confirm('Вы уверены, что хотите удалить аккаунт? Это действие нельзя отменить.')) {
+                        alert('Запрос на удаление аккаунта отправлен. Мы свяжемся с вами для подтверждения.');
+                    }
+                });
+            }
+            
+            // Переключение тем оформления
+            const themeOptions = document.querySelectorAll('.theme-option');
+            themeOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    themeOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const theme = this.textContent.trim();
+                    alert(`Тема "${theme}" выбрана. Изменения вступят в силу после перезагрузки страницы.`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

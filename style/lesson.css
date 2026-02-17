@@ -1,0 +1,545 @@
+
+/* Заголовок урока */
+.lesson-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.lesson-header h1 {
+    font-size: 2.5rem;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.lesson-progress-info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Основной контейнер урока */
+.lesson-container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 992px) {
+    .lesson-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Основной контент урока */
+.lesson-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Теория урока */
+.theory-section {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 2rem;
+    border: 1px solid #333;
+}
+
+.theory-section h2 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--accent);
+}
+
+.theory-content {
+    margin-top: 1.5rem;
+}
+
+.theory-section h3 {
+    color: var(--text-main);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.theory-section p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.theory-list {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.theory-list li {
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Цветовые карточки */
+.color-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.color-card {
+    padding: 1.5rem 1rem;
+    border-radius: var(--radius);
+    text-align: center;
+    font-weight: 600;
+    color: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.color-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.color-card.red {
+    background: #EF4444;
+}
+
+.color-card.blue {
+    background: #3B82F6;
+}
+
+.color-card.green {
+    background: #10B981;
+}
+
+.color-card.yellow {
+    background: #F59E0B;
+    color: #1a1a1a;
+}
+
+/* Задания урока */
+.exercises-section {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 2rem;
+    border: 1px solid #333;
+}
+
+.exercises-section h2 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--accent);
+}
+
+.exercise-card {
+    background: var(--bg-section);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #444;
+    transition: transform 0.3s;
+}
+
+.exercise-card:last-child {
+    margin-bottom: 0;
+}
+
+.exercise-card:hover {
+    transform: translateY(-2px);
+}
+
+.exercise-card h3 {
+    color: var(--text-main);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.exercise-question {
+    color: var(--text-muted);
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* Варианты ответов */
+.options-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+}
+
+.option-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius);
+    border: 1px solid #444;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.option-item:hover {
+    border-color: var(--accent);
+    background: rgba(185, 76, 255, 0.05);
+}
+
+.option-item.selected {
+    border-color: var(--accent);
+    background: rgba(185, 76, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(185, 76, 255, 0.1);
+}
+
+/* Поле для ввода */
+.blank-input {
+    width: 120px;
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    text-align: center;
+    border: 2px solid #444;
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    color: var(--text-main);
+    transition: all 0.3s;
+}
+
+.blank-input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(185, 76, 255, 0.1);
+}
+
+/* Игра на сопоставление */
+.matching-game {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.draggable-item {
+    padding: 1rem;
+    background: var(--accent);
+    color: white;
+    border-radius: var(--radius);
+    text-align: center;
+    font-weight: 600;
+    cursor: grab;
+    user-select: none;
+    transition: all 0.3s;
+    border: 2px solid var(--accent);
+}
+
+.draggable-item:hover {
+    background: #a233ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(185, 76, 255, 0.3);
+}
+
+.drop-zone {
+    padding: 1rem;
+    background: var(--bg-card);
+    border: 2px dashed #444;
+    border-radius: var(--radius);
+    min-height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.drop-zone:hover {
+    border-color: var(--accent);
+}
+
+.drop-zone.filled {
+    border: 2px solid var(--accent);
+    background: rgba(185, 76, 255, 0.1);
+}
+
+/* Кнопка проверки */
+.check-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--secondary);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.check-btn:hover {
+    background: #0da271;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.check-btn::before {
+    content: "✓";
+    font-size: 1.1rem;
+}
+
+/* Навигация между уроками */
+.lesson-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #333;
+}
+
+/* Боковая панель */
+.lesson-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Слова урока */
+.vocabulary-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    border: 1px solid #333;
+}
+
+.vocabulary-card h3 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.vocabulary-list {
+    margin-top: 1rem;
+}
+
+.vocabulary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background: var(--bg-section);
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    transition: background 0.3s;
+}
+
+.vocabulary-item:hover {
+    background: #2a2a2a;
+}
+
+.vocabulary-item:last-child {
+    margin-bottom: 0;
+}
+
+.vocabulary-word {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.vocabulary-translation {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.add-vocabulary-btn {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.add-vocabulary-btn:hover {
+    background: #a233ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(185, 76, 255, 0.3);
+}
+
+.add-vocabulary-btn::before {
+    content: "+";
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Дополнительные материалы */
+.materials-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    border: 1px solid #333;
+}
+
+.materials-card h3 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.materials-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.materials-list li {
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #333;
+}
+
+.materials-list li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.materials-list a {
+    color: var(--accent);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s;
+}
+
+.materials-list a:hover {
+    color: #a233ff;
+}
+
+.materials-list a::before {
+    content: "▶";
+    font-size: 0.8rem;
+}
+
+/* Прогресс урока */
+.progress-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    border: 1px solid #333;
+    text-align: center;
+}
+
+.progress-card h3 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.progress-info {
+    margin: 1.5rem 0;
+}
+
+.progress-text {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}
+
+.complete-lesson-btn {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: var(--secondary);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.complete-lesson-btn:hover {
+    background: #0da271;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.complete-lesson-btn::before {
+    content: "✓";
+    font-size: 1.2rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .lesson-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .lesson-progress-info {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .color-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .matching-game {
+        grid-template-columns: 1fr;
+    }
+    
+    .lesson-navigation {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .lesson-navigation .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .lesson-header h1 {
+        font-size: 2rem;
+    }
+    
+    .color-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .theory-section,
+    .exercises-section,
+    .vocabulary-card,
+    .materials-card,
+    .progress-card {
+        padding: 1.25rem;
+    }
+}

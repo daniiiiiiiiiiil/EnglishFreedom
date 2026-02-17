@@ -1,0 +1,511 @@
+/* Заголовок курса */
+.course-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: var(--radius);
+    margin-bottom: 2.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.course-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(30%, -30%);
+}
+
+.course-title {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.course-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+}
+
+.course-meta {
+    display: flex;
+    gap: 3rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.meta-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.meta-value {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.level-badge {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.25rem 1.25rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.rating-stars {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* Прогресс курса */
+.course-progress-section {
+    margin: 2rem 0 3rem;
+    text-align: center;
+}
+
+.progress-container {
+    max-width: 600px;
+    margin: 0 auto 1rem;
+}
+
+.progress-text {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+/* Основной контент курса */
+.course-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 992px) {
+    .course-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Левая колонка - описание курса */
+.course-description {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--accent);
+}
+
+.course-description p {
+    line-height: 1.7;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+}
+
+.learning-objectives {
+    margin: 2rem 0 3rem;
+}
+
+.objectives-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .objectives-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+.objective-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: rgba(185, 76, 255, 0.05);
+    border-radius: var(--radius);
+    border: 1px solid rgba(185, 76, 255, 0.1);
+}
+
+.objective-icon {
+    color: var(--accent);
+    font-size: 1.2rem;
+    min-width: 24px;
+}
+
+/* Программа курса */
+.course-program {
+    margin-top: 3rem;
+}
+
+.module {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+    border: 1px solid #333;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.module:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.module-header {
+    padding: 1.25rem 1.5rem;
+    background: #2a2a2a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.module-header:hover {
+    background: #333;
+}
+
+.module-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-main);
+}
+
+.module-meta {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.module-toggle {
+    color: var(--accent);
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+}
+
+.module-toggle.expanded {
+    transform: rotate(90deg);
+}
+
+.lesson-list {
+    padding: 1rem 1.5rem;
+    display: none;
+}
+
+.lesson-list.expanded {
+    display: block;
+}
+
+.lesson-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #333;
+    transition: background 0.3s;
+}
+
+.lesson-item:hover {
+    background: rgba(185, 76, 255, 0.05);
+}
+
+.lesson-item:last-child {
+    border-bottom: none;
+}
+
+.lesson-status {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.status-completed {
+    background: var(--secondary);
+}
+
+.status-current {
+    background: var(--accent);
+    position: relative;
+    animation: pulse 2s infinite;
+}
+
+.status-locked {
+    background: #666;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(185, 76, 255, 0.7); }
+    70% { box-shadow: 0 0 0 6px rgba(185, 76, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(185, 76, 255, 0); }
+}
+
+.lesson-info {
+    flex: 1;
+}
+
+.lesson-title {
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+.lesson-duration {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+.lesson-action {
+    color: var(--accent);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Кнопка продолжения */
+.continue-button {
+    width: 100%;
+    margin-top: 2rem;
+    padding: 1.25rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.continue-button::after {
+    content: "→";
+    font-size: 1.2rem;
+}
+
+.course-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Информационная карточка */
+.info-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    border: 1px solid #333;
+}
+
+.info-card h3 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.info-list {
+    margin-top: 1rem;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #333;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.info-label {
+    color: var(--text-muted);
+}
+
+.info-value {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+/* Карточка преподавателя */
+.teacher-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    border: 1px solid #333;
+}
+
+.teacher-info {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+
+.teacher-avatar {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--accent), #a233ff);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.teacher-details {
+    flex: 1;
+}
+
+.teacher-name {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-main);
+    margin-bottom: 0.25rem;
+}
+
+.teacher-title {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.teacher-experience {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--warning);
+    font-size: 0.85rem;
+}
+
+/* Отзывы о курсе */
+.reviews-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    border: 1px solid #333;
+}
+
+.review-item {
+    padding: 1.25rem;
+    background: var(--bg-section);
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+}
+
+.review-item:last-child {
+    margin-bottom: 0;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.reviewer-name {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.review-rating {
+    display: flex;
+    gap: 0.1rem;
+}
+
+.star-filled {
+    color: var(--warning);
+}
+
+.review-text {
+    color: var(--text-muted);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* Кнопка в футере */
+.course-footer {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid #333;
+}
+
+.course-footer h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .course-hero {
+        padding: 2rem 1.5rem;
+    }
+    
+    .course-title {
+        font-size: 2.2rem;
+    }
+    
+    .course-meta {
+        gap: 1.5rem;
+    }
+    
+    .module-header {
+        padding: 1rem 1.25rem;
+    }
+    
+    .lesson-item {
+        padding: 0.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .course-title {
+        font-size: 1.8rem;
+    }
+    
+    .course-subtitle {
+        font-size: 1rem;
+    }
+    
+    .course-meta {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .teacher-info {
+        flex-direction: column;
+        text-align: center;
+    }
+}

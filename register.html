@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация - EnglishFreedom</title>
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/button.css">
+    <link rel="stylesheet" href="style/components.css">
+    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="style/register.css">
+</head>
+<body>
+    <header class="unified-header">
+        <a href="index.html" class="logo">EnglishFreedom</a>
+        <nav class="header-nav">
+            <a href="index.html" class="nav-link">Главная</a>
+            <a href="courses.html" class="nav-link">Курсы</a>
+        </nav>
+        <div class="header-auth">
+            <a href="login.html" class="btn btn-outline">Вход</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="auth-container">
+            <div class="auth-header">
+                <h1>Создание аккаунта</h1>
+                <p class="auth-subtitle">Присоединяйтесь к сообществу изучающих английский язык</p>
+            </div>
+            
+            <div class="auth-card">
+                <form class="auth-form">
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" class="form-control name" placeholder="Ваше имя" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control email" placeholder="example@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Пароль</label>
+                        <input type="password" id="password" class="form-control password" placeholder="Не менее 8 символов" required>
+                        <div class="password-strength">
+                            <div class="strength-bar">
+                                <div class="strength-fill"></div>
+                            </div>
+                            <div class="strength-text">Сложность пароля: слабый</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirm-password">Подтверждение пароля</label>
+                        <input type="password" id="confirm-password" class="form-control confirm-password" placeholder="Повторите пароль" required>
+                        <div class="password-match"></div>
+                    </div>
+                    
+                    <div class="terms-checkbox">
+                        <label class="terms-label">
+                            <input type="checkbox" required>
+                            <span class="terms-text">
+                                Я принимаю <a href="#">условия использования</a> и <a href="#">политику конфиденциальности</a>
+                            </span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary register-btn">Создать аккаунт</button>
+                </form>
+                
+                <div class="register-switch">
+                    Уже есть аккаунт? <a href="login.html">Войти</a>
+                </div>
+                
+                <div class="social-auth">
+                    <div class="divider">
+                        <span>Или зарегистрируйтесь через</span>
+                    </div>
+                    
+                    <div class="social-buttons">
+                        <button type="button" class="social-btn google">
+                            Google
+                        </button>
+                        <button type="button" class="social-btn facebook">
+                            Facebook
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="register-benefits">
+                <h3 class="benefits-title">После регистрации вы получите:</h3>
+                <ul class="benefits-list">
+                    <li>Доступ к бесплатным урокам</li>
+                    <li>Возможность отслеживать прогресс</li>
+                    <li>Персональные рекомендации</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="unified-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>EnglishFreedom</h4>
+                <p>Изучайте английский язык эффективно и интересно с нашей платформой.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Навигация</h4>
+                <a href="index.html">Главная</a>
+                <a href="courses.html">Курсы</a>
+                <a href="login.html">Вход</a>
+                <a href="register.html">Регистрация</a>
+            </div>
+            <div class="footer-section">
+                <h4>Поддержка</h4>
+                <a href="#">Помощь</a>
+                <a href="#">FAQ</a>
+                <a href="#">Контакты</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 EnglishFreedom. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>

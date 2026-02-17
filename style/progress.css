@@ -1,0 +1,384 @@
+:root {
+    --border: #333;
+    --gray: #b3b3b3;
+    --light: #2a2a2a;
+    --primary: #b94cff;
+    --secondary: #10B981;
+}
+
+/* Основной заголовок */
+.progress-header {
+    margin-bottom: 2rem;
+}
+
+.progress-header h1 {
+    font-size: 2.5rem;
+    color: var(--text-main);
+    margin: 0;
+}
+
+/* Основная статистика */
+.stats-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    border: 1px solid #333;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.stat-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5rem;
+}
+
+/* Статистика */
+.stat-list {
+    margin-top: 1rem;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #333;
+}
+
+.stat-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.stat-item:first-child {
+    padding-top: 0;
+}
+
+.stat-label {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.stat-value {
+    font-weight: 600;
+    color: var(--text-main);
+    font-size: 1.1rem;
+}
+
+/* График активности */
+.activity-chart {
+    margin-top: 1rem;
+}
+
+.chart-container {
+    display: flex;
+    height: 200px;
+    align-items: flex-end;
+    gap: 0.5rem;
+    padding: 0 1rem;
+}
+
+.chart-day {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.chart-bar {
+    width: 80%;
+    background: linear-gradient(to top, var(--accent), #a233ff);
+    border-radius: 4px 4px 0 0;
+    transition: height 0.3s ease;
+    position: relative;
+}
+
+.chart-bar:hover {
+    opacity: 0.9;
+}
+
+.chart-label {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.chart-value {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.chart-bar:hover .chart-value {
+    opacity: 1;
+}
+
+.chart-caption {
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Прогресс по курсам */
+.courses-progress {
+    margin-bottom: 2rem;
+}
+
+.courses-progress .card {
+    padding: 1.5rem;
+}
+
+.progress-item {
+    margin-bottom: 1.5rem;
+}
+
+.progress-item:last-child {
+    margin-bottom: 0;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.progress-title {
+    color: var(--text-main);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.progress-percent {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.progress-bar-container {
+    margin-top: 0.5rem;
+}
+
+/* История обучения */
+.learning-history {
+    margin-bottom: 2rem;
+}
+
+.learning-history .card {
+    overflow: hidden;
+    padding: 0;
+}
+
+.learning-history h2 {
+    padding: 1.5rem 1.5rem 0 1.5rem;
+    margin: 0;
+    color: var(--accent);
+    font-size: 1.4rem;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.history-table thead {
+    background: #2a2a2a;
+}
+
+.history-table th {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.history-table tbody tr {
+    border-bottom: 1px solid #333;
+    transition: background 0.3s;
+}
+
+.history-table tbody tr:hover {
+    background: #2a2a2a;
+}
+
+.history-table td {
+    padding: 1rem 1.5rem;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+.history-date {
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.history-course {
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.history-lesson {
+    color: var(--text-muted);
+    max-width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.history-time {
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.history-result {
+    text-align: center;
+}
+
+.result-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--secondary);
+    color: white;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    min-width: 50px;
+    text-align: center;
+}
+
+/* Кнопка экспорта */
+.export-section {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #333;
+}
+
+.export-btn {
+    padding: 0.875rem 2rem;
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.export-btn:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(185, 76, 255, 0.3);
+}
+
+.export-btn::before {
+    content: "📊";
+    font-size: 1.1rem;
+}
+
+/* Пустое состояние */
+.empty-state {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: var(--text-muted);
+}
+
+.empty-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.empty-state h3 {
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+    margin-bottom: 1.5rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .stats-overview {
+        grid-template-columns: 1fr;
+    }
+    
+    .history-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .history-table th,
+    .history-table td {
+        padding: 0.75rem 1rem;
+    }
+    
+    .chart-container {
+        height: 150px;
+        padding: 0 0.5rem;
+    }
+    
+    .chart-label {
+        font-size: 0.75rem;
+    }
+    
+    .progress-header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .stat-card {
+        padding: 1.25rem;
+    }
+    
+    .progress-item {
+        margin-bottom: 1.25rem;
+    }
+    
+    .export-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .learning-history h2 {
+        padding: 1.25rem 1.25rem 0 1.25rem;
+        font-size: 1.3rem;
+    }
+}

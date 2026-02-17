@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 3: Числа и цвета - EnglishFreedom</title>
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/button.css">
+    <link rel="stylesheet" href="style/components.css">
+    <link rel="stylesheet" href="style/lesson.css">
+</head>
+<body>
+    
+    <main>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <div>
+                <h1>Урок 3: Числа и цвета</h1>
+                <p style="color: var(--gray);">Курс: Beginner English (A1)</p>
+            </div>
+            <div class="progress-bar" style="width: 300px;">
+                <div class="progress-fill" style="width: 20%"></div>
+            </div>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 2rem;">
+            <div>
+                <div class="card">
+                    <h2>Теория</h2>
+                    <div style="margin-top: 1rem;">
+                        <h3>Числа от 1 до 20</h3>
+                        <p>В английском языке числа имеют свои названия:</p>
+                        <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                            <li>1 - one</li>
+                            <li>2 - two</li>
+                            <li>3 - three</li>
+                            <li>4 - four</li>
+                            <li>5 - five</li>
+                        </ul>
+                        
+                        <h3 style="margin-top: 2rem;">Основные цвета</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; margin: 1rem 0;">
+                            <div style="background: #EF4444; color: white; padding: 1rem; border-radius: var(--radius); text-align: center;">
+                                red - красный
+                            </div>
+                            <div style="background: #3B82F6; color: white; padding: 1rem; border-radius: var(--radius); text-align: center;">
+                                blue - синий
+                            </div>
+                            <div style="background: #10B981; color: white; padding: 1rem; border-radius: var(--radius); text-align: center;">
+                                green - зелёный
+                            </div>
+                            <div style="background: #F59E0B; color: white; padding: 1rem; border-radius: var(--radius); text-align: center;">
+                                yellow - жёлтый
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card" style="margin-top: 2rem;">
+                    <h2>Задания</h2>
+                    <div style="margin-top: 1rem;">
+                        <div style="background: var(--light); padding: 1.5rem; border-radius: var(--radius); margin-bottom: 1rem;">
+                            <h3>Задание 1: Выберите правильный перевод</h3>
+                            <p style="margin: 1rem 0;">Как будет "красный" на английском?</p>
+                            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                                <label style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="radio" name="q1"> blue
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="radio" name="q1"> green
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="radio" name="q1" checked> red
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="radio" name="q1"> yellow
+                                </label>
+                            </div>
+                            <button style="margin-top: 1rem; padding: 0.5rem 1rem; background: var(--secondary); color: white; border: none; border-radius: var(--radius); cursor: pointer;">
+                                Проверить ответ
+                            </button>
+                        </div>
+                        
+                        <div style="background: var(--light); padding: 1.5rem; border-radius: var(--radius); margin-bottom: 1rem;">
+                            <h3>Задание 2: Впишите пропущенное слово</h3>
+                            <p style="margin: 1rem 0;">The sky is <input type="text" style="width: 100px; padding: 0.25rem; border: 1px solid var(--border); border-radius: 4px;"> (синий).</p>
+                            <button style="margin-top: 1rem; padding: 0.5rem 1rem; background: var(--secondary); color: white; border: none; border-radius: var(--radius); cursor: pointer;">
+                                Проверить ответ
+                            </button>
+                        </div>
+                        
+                        <div style="background: var(--light); padding: 1.5rem; border-radius: var(--radius);">
+                            <h3>Задание 3: Сопоставьте слова</h3>
+                            <p style="margin: 1rem 0;">Перетащите цвета к их переводам:</p>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
+                                <div style="padding: 1rem; background: white; border: 2px dashed var(--border); border-radius: var(--radius); text-align: center;">
+                                    red
+                                </div>
+                                <div style="padding: 1rem; background: white; border: 2px dashed var(--border); border-radius: var(--radius); text-align: center;">
+                                    жёлтый
+                                </div>
+                                <div style="padding: 1rem; background: white; border: 2px dashed var(--border); border-radius: var(--radius); text-align: center;">
+                                    зелёный
+                                </div>
+                                <div style="padding: 1rem; background: white; border: 2px dashed var(--border); border-radius: var(--radius); text-align: center;">
+                                    green
+                                </div>
+                            </div>
+                            <button style="margin-top: 1rem; padding: 0.5rem 1rem; background: var(--secondary); color: white; border: none; border-radius: var(--radius); cursor: pointer;">
+                                Проверить ответ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
+                    <a href="lesson.html" class="btn btn-outline">
+                        ← Предыдущий урок
+                    </a>
+                    <a href="lesson.html" class="btn btn-primary">
+                        Следующий урок →
+                    </a>
+                </div>
+            </div>
+            
+            <div>
+                <div class="card">
+                    <h3>Слова урока</h3>
+                    <div style="margin-top: 1rem;">
+                        <div style="display: flex; justify-content: space-between; padding: 0.5rem; background: var(--light); border-radius: 4px; margin-bottom: 0.5rem;">
+                            <span>one</span>
+                            <span>один</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.5rem; background: var(--light); border-radius: 4px; margin-bottom: 0.5rem;">
+                            <span>red</span>
+                            <span>красный</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.5rem; background: var(--light); border-radius: 4px; margin-bottom: 0.5rem;">
+                            <span>blue</span>
+                            <span>синий</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.5rem; background: var(--light); border-radius: 4px;">
+                            <span>green</span>
+                            <span>зелёный</span>
+                        </div>
+                    </div>
+                    <button style="width: 100%; margin-top: 1rem; padding: 0.5rem; background: var(--primary); color: white; border: none; border-radius: var(--radius); cursor: pointer;">
+                        Добавить в словарь
+                    </button>
+                </div>
+                
+                <div class="card" style="margin-top: 1rem;">
+                    <h3>Дополнительные материалы</h3>
+                    <ul style="margin-top: 1rem; padding-left: 1rem;">
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--primary);">Видео: Произношение чисел</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--primary);">Статья: Цвета в английском</a></li>
+                        <li><a href="#" style="color: var(--primary);">Тест на закрепление</a></li>
+                    </ul>
+                </div>
+                
+                <div class="card" style="margin-top: 1rem;">
+                    <h3>Прогресс урока</h3>
+                    <div class="progress-bar" style="margin: 1rem 0;">
+                        <div class="progress-fill" style="width: 60%"></div>
+                    </div>
+                    <div style="text-align: center;">Завершено: 3/5 заданий</div>
+                    <button style="width: 100%; margin-top: 1rem; padding: 0.75rem; background: var(--secondary); color: white; border: none; border-radius: var(--radius); cursor: pointer; font-weight: bold;">
+                        Завершить урок
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
