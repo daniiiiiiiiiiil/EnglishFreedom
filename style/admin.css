@@ -1,33 +1,50 @@
-
-
 /* Основной заголовок */
 .admin-header {
     margin-bottom: 2rem;
+    animation: fadeInDown 0.6s ease-out;
 }
 
 .admin-header h1 {
     font-size: 2.5rem;
     color: var(--text-main);
     margin: 0;
+    background: linear-gradient(135deg, var(--text-main), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeInLeft 0.6s ease-out;
 }
 
 /* Бейдж администратора */
 .admin-badge {
-    background: var(--danger);
+    background: linear-gradient(135deg, var(--danger), #b91c1c);
     color: white;
     padding: 0.5rem 1.25rem;
     border-radius: 999px;
     font-weight: 600;
     font-size: 0.9rem;
-    border: 1px solid var(--danger);
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    animation: pulse 2s infinite;
+    position: relative;
+    overflow: hidden;
 }
 
 .admin-badge::before {
     content: "🛡️";
     font-size: 1rem;
+    animation: tilt 3s infinite;
+}
+
+.admin-badge::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
 }
 
 /* Статистика админ-панели */
@@ -44,12 +61,38 @@
     border-radius: var(--radius);
     text-align: center;
     border: 1px solid #333;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: var(--transition-bounce);
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: both;
+    position: relative;
+    overflow: hidden;
 }
 
+.admin-stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+}
+
+.admin-stat-card:hover::before {
+    transform: translateX(100%);
+}
+
+.admin-stat-card:nth-child(1) { animation-delay: 0.1s; }
+.admin-stat-card:nth-child(2) { animation-delay: 0.2s; }
+.admin-stat-card:nth-child(3) { animation-delay: 0.3s; }
+.admin-stat-card:nth-child(4) { animation-delay: 0.4s; }
+
 .admin-stat-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-10px) scale(1.02);
     box-shadow: var(--shadow-lg);
+    border-color: var(--accent);
 }
 
 .admin-stat-number {
@@ -57,6 +100,10 @@
     font-weight: 700;
     margin-bottom: 0.5rem;
     line-height: 1;
+    background: linear-gradient(135deg, var(--text-main), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: scaleIn 0.6s ease-out;
 }
 
 .stat-users {
@@ -107,6 +154,7 @@
     border-radius: var(--radius);
     padding: 1.5rem;
     border: 1px solid #333;
+    animation: fadeInLeft 0.6s ease-out;
 }
 
 .users-management-header {
@@ -122,6 +170,23 @@
     color: var(--accent);
     margin: 0;
     font-size: 1.4rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.users-management-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s;
+}
+
+.users-management:hover .users-management-header h2::after {
+    width: 100px;
 }
 
 .users-search {
@@ -157,11 +222,21 @@
 
 .users-table tbody tr {
     border-bottom: 1px solid #333;
-    transition: background 0.3s;
+    transition: var(--transition);
+    animation: fadeInRight 0.5s ease-out;
+    animation-fill-mode: both;
 }
+
+.users-table tbody tr:nth-child(1) { animation-delay: 0.1s; }
+.users-table tbody tr:nth-child(2) { animation-delay: 0.2s; }
+.users-table tbody tr:nth-child(3) { animation-delay: 0.3s; }
+.users-table tbody tr:nth-child(4) { animation-delay: 0.4s; }
+.users-table tbody tr:nth-child(5) { animation-delay: 0.5s; }
 
 .users-table tbody tr:hover {
     background: #2a2a2a;
+    transform: scale(1.01);
+    box-shadow: var(--shadow);
 }
 
 .users-table td {
@@ -178,6 +253,12 @@
     border-radius: 999px;
     font-size: 0.85rem;
     font-weight: 600;
+    animation: scaleIn 0.3s ease-out;
+    transition: all 0.3s;
+}
+
+.role-badge:hover {
+    transform: scale(1.1);
 }
 
 .role-student {
@@ -213,7 +294,7 @@
     color: var(--text-main);
     cursor: pointer;
     font-size: 0.85rem;
-    transition: all 0.3s;
+    transition: var(--transition);
     display: flex;
     align-items: center;
     gap: 0.25rem;
@@ -222,11 +303,18 @@
 .edit-btn:hover {
     border-color: var(--accent);
     color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(185, 76, 255, 0.2);
 }
 
 .edit-btn::before {
     content: "✏️";
     font-size: 0.9rem;
+    transition: transform 0.3s;
+}
+
+.edit-btn:hover::before {
+    transform: rotate(15deg);
 }
 
 .ban-btn {
@@ -237,7 +325,7 @@
     color: var(--danger);
     cursor: pointer;
     font-size: 0.85rem;
-    transition: all 0.3s;
+    transition: var(--transition);
     display: flex;
     align-items: center;
     gap: 0.25rem;
@@ -245,11 +333,18 @@
 
 .ban-btn:hover {
     background: rgba(239, 68, 68, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
 }
 
 .ban-btn::before {
     content: "🚫";
     font-size: 0.9rem;
+    transition: transform 0.3s;
+}
+
+.ban-btn:hover::before {
+    transform: scale(1.2);
 }
 
 /* Пагинация */
@@ -284,13 +379,15 @@
     border-radius: 4px;
     color: var(--text-muted);
     cursor: pointer;
-    transition: all 0.3s;
+    transition: var(--transition);
     font-size: 0.9rem;
 }
 
 .pagination-btn:hover {
     border-color: var(--accent);
     color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(185, 76, 255, 0.2);
 }
 
 .pagination-btn.active {
@@ -313,12 +410,30 @@
     border-radius: var(--radius);
     padding: 1.5rem;
     border: 1px solid #333;
+    animation: fadeInRight 0.6s ease-out;
 }
 
 .courses-management h2 {
     color: var(--accent);
     margin-bottom: 1.5rem;
     font-size: 1.4rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.courses-management h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s;
+}
+
+.courses-management:hover h2::after {
+    width: 100px;
 }
 
 .courses-list {
@@ -333,11 +448,21 @@
     border-radius: var(--radius);
     padding: 1.25rem;
     border: 1px solid #444;
-    transition: transform 0.3s;
+    transition: var(--transition-bounce);
+    animation: fadeInUp 0.5s ease-out;
+    animation-fill-mode: both;
 }
 
+.course-item:nth-child(1) { animation-delay: 0.1s; }
+.course-item:nth-child(2) { animation-delay: 0.2s; }
+.course-item:nth-child(3) { animation-delay: 0.3s; }
+.course-item:nth-child(4) { animation-delay: 0.4s; }
+.course-item:nth-child(5) { animation-delay: 0.5s; }
+
 .course-item:hover {
-    transform: translateY(-2px);
+    transform: translateY(-5px) scale(1.02);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-lg);
 }
 
 .course-info {
@@ -391,6 +516,11 @@
     content: "+";
     font-size: 1.2rem;
     font-weight: bold;
+    transition: transform 0.3s;
+}
+
+.add-course-btn:hover::before {
+    transform: rotate(90deg);
 }
 
 /* Правая колонка */
@@ -406,6 +536,7 @@
     border-radius: var(--radius);
     padding: 1.5rem;
     border: 1px solid #333;
+    animation: fadeInUp 0.6s ease-out;
 }
 
 .system-info-card h2 {
@@ -440,20 +571,28 @@
 
 .status-dot.online {
     background: var(--secondary);
+    box-shadow: 0 0 10px var(--secondary);
 }
 
 .status-dot.warning {
     background: var(--warning);
+    box-shadow: 0 0 10px var(--warning);
 }
 
 .status-dot.error {
     background: var(--danger);
+    box-shadow: 0 0 10px var(--danger);
 }
 
 @keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.5; }
-    100% { opacity: 1; }
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
 }
 
 .status-text {
@@ -498,6 +637,7 @@
     border-radius: var(--radius);
     padding: 1.5rem;
     border: 1px solid #333;
+    animation: fadeInLeft 0.6s ease-out;
 }
 
 .quick-actions-card h2 {
@@ -519,17 +659,35 @@
     border-radius: var(--radius);
     color: var(--text-main);
     cursor: pointer;
-    transition: all 0.3s;
+    transition: var(--transition-bounce);
     text-align: left;
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.action-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(185, 76, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.action-btn:hover::before {
+    left: 100%;
 }
 
 .action-btn:hover {
     border-color: var(--accent);
     background: rgba(185, 76, 255, 0.05);
-    transform: translateY(-2px);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-lg);
 }
 
 /* Активность системы */
@@ -538,6 +696,7 @@
     border-radius: var(--radius);
     padding: 1.5rem;
     border: 1px solid #333;
+    animation: fadeInRight 0.6s ease-out;
 }
 
 .activity-card h2 {
@@ -555,7 +714,18 @@
 .activity-item {
     padding: 0.75rem 0;
     border-bottom: 1px solid #333;
+    animation: fadeInLeft 0.5s ease-out;
+    animation-fill-mode: both;
+    transition: transform 0.3s;
 }
+
+.activity-item:hover {
+    transform: translateX(5px);
+}
+
+.activity-item:nth-child(1) { animation-delay: 0.1s; }
+.activity-item:nth-child(2) { animation-delay: 0.2s; }
+.activity-item:nth-child(3) { animation-delay: 0.3s; }
 
 .activity-item:last-child {
     border-bottom: none;
@@ -582,7 +752,7 @@
     color: var(--text-main);
     cursor: pointer;
     font-weight: 500;
-    transition: all 0.3s;
+    transition: var(--transition);
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -591,6 +761,8 @@
 .manage-btn:hover {
     border-color: var(--accent);
     color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(185, 76, 255, 0.2);
 }
 
 .delete-btn {
@@ -601,7 +773,7 @@
     color: var(--danger);
     cursor: pointer;
     font-weight: 500;
-    transition: all 0.3s;
+    transition: var(--transition);
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -609,6 +781,8 @@
 
 .delete-btn:hover {
     background: rgba(239, 68, 68, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
 }
 
 /* Адаптивность */

@@ -35,12 +35,10 @@
         </div>
     </header>
 
-    <!-- MAIN CONTENT -->
-    <main class="container">
-        <!-- Заголовок курса -->
+     <main class="container">
         <div class="course-hero">
             <h1 class="course-title">Beginner English (A1)</h1>
-            <p class="course-subtitle">Основы английского языка для абсолютных начинающих. Начните свой путь к свободному владению английским с нуля.</p>
+            <p class="course-subtitle">Основы английского языка для абсолютных начинающих.</p>
             
             <div class="course-meta">
                 <div class="meta-item">
@@ -57,14 +55,11 @@
                 </div>
                 <div class="meta-item">
                     <span class="meta-label">Рейтинг</span>
-                    <div class="meta-value rating-stars">
-                        ⭐⭐⭐⭐⭐ <span style="margin-left: 0.5rem;">4.8 (156 отзывов)</span>
-                    </div>
+                    <div class="meta-value rating-stars">⭐⭐⭐⭐⭐ 4.8 (156 отзывов)</div>
                 </div>
             </div>
         </div>
 
-        <!-- Прогресс курса -->
         <div class="course-progress-section">
             <div class="progress-container">
                 <div class="progress-bar">
@@ -74,11 +69,8 @@
             <div class="progress-text">Прогресс: 20% завершено</div>
         </div>
 
-        <!-- Основной контент -->
         <div class="course-content">
-            <!-- Левая колонка -->
             <div>
-                <!-- Описание курса -->
                 <div class="course-description">
                     <h2 class="section-title">О курсе</h2>
                     <p>
@@ -343,32 +335,23 @@
     </footer>
 
     <script>
-        // Функция для раскрытия/скрытия модулей
-        function toggleModule(moduleId) {
+       document.addEventListener('DOMContentLoaded', function() {
+        window.toggleModule = function(moduleId) {
             const module = document.getElementById(moduleId);
             const lessonList = module.querySelector('.lesson-list');
             const toggleIcon = module.querySelector('.module-toggle');
             
-            if (lessonList.classList.contains('expanded')) {
-                lessonList.classList.remove('expanded');
-                toggleIcon.classList.remove('expanded');
-            } else {
-                lessonList.classList.add('expanded');
-                toggleIcon.classList.add('expanded');
-            }
-        }
+            lessonList.classList.toggle('expanded');
+            toggleIcon.classList.toggle('expanded');
+        };
         
-        // Автоматически раскрываем первый модуль
-        document.addEventListener('DOMContentLoaded', function() {
-            const firstModule = document.getElementById('module-1');
-            if (firstModule) {
-                const lessonList = firstModule.querySelector('.lesson-list');
-                const toggleIcon = firstModule.querySelector('.module-toggle');
-                lessonList.classList.add('expanded');
-                toggleIcon.classList.add('expanded');
-            }
-            
-            // Добавляем обработчики клика для всех модулей
+        const firstModule = document.getElementById('module-1');
+        if (firstModule) {
+            const lessonList = firstModule.querySelector('.lesson-list');
+            const toggleIcon = firstModule.querySelector('.module-toggle');
+            lessonList?.classList.add('expanded');
+            toggleIcon?.classList.add('expanded');
+        }                
             const modules = document.querySelectorAll('.module');
             modules.forEach(module => {
                 module.addEventListener('click', function(e) {

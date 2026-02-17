@@ -1,29 +1,65 @@
-
-
 .card {
     background: var(--bg-card);
     border-radius: var(--radius);
     padding: 30px 20px;
     box-shadow: var(--shadow);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: var(--transition-bounce);
     border: 1px solid #333;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+}
+
+.card:hover::before {
+    transform: translateX(100%);
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px) scale(1.02);
     box-shadow: var(--shadow-lg);
+    border-color: var(--accent);
 }
 
 .card-header {
     padding-bottom: 1rem;
     margin-bottom: 1rem;
     border-bottom: 1px solid #333;
+    position: relative;
+}
+
+.card-header::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s;
+}
+
+.card:hover .card-header::after {
+    width: 100px;
 }
 
 .card-title {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--text-main), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .card-body {
@@ -43,17 +79,30 @@
     background: var(--bg-card);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+    border: 1px solid #333;
+    animation: fadeInUp 0.6s ease-out;
 }
 
 .form-group {
     margin-bottom: 1.5rem;
+    animation: fadeInUp 0.5s ease-out;
+    animation-fill-mode: both;
 }
+
+.form-group:nth-child(1) { animation-delay: 0.1s; }
+.form-group:nth-child(2) { animation-delay: 0.2s; }
+.form-group:nth-child(3) { animation-delay: 0.3s; }
 
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 500;
     color: var(--text-main);
+    transition: color 0.3s;
+}
+
+.form-group:focus-within label {
+    color: var(--accent);
 }
 
 .form-control {
@@ -64,13 +113,14 @@
     border-radius: var(--radius);
     font-size: 1rem;
     color: var(--text-main);
-    transition: border-color 0.3s;
+    transition: var(--transition);
 }
 
 .form-control:focus {
     outline: none;
     border-color: var(--accent);
     box-shadow: 0 0 0 3px rgba(185, 76, 255, 0.1);
+    transform: translateY(-2px);
 }
 
 .form-control-sm {
@@ -100,8 +150,15 @@ textarea.form-control {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    transition: transform 0.3s;
 }
 
+.checkbox-item:hover,
+.radio-item:hover {
+    transform: translateX(5px);
+}
+
+/* Прогресс-бар */
 .progress-bar {
     height: 8px;
     background: #333;
@@ -112,19 +169,33 @@ textarea.form-control {
 
 .progress-fill {
     height: 100%;
-    background: var(--accent);
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
     border-radius: 4px;
-    transition: width 0.3s ease-in-out;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
 }
 
 .progress-secondary .progress-fill {
-    background: var(--secondary);
+    background: linear-gradient(90deg, var(--secondary), var(--secondary-light));
 }
 
 .progress-danger .progress-fill {
-    background: var(--danger);
+    background: linear-gradient(90deg, var(--danger), #f87171);
 }
 
+/* Статусы */
 .status {
     display: inline-block;
     padding: 4px 12px;
@@ -132,6 +203,20 @@ textarea.form-control {
     font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
+    animation: scaleIn 0.3s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.status::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: shimmer 2s infinite;
 }
 
 .status-success {
@@ -158,21 +243,27 @@ textarea.form-control {
     border: 1px solid var(--info);
 }
 
+/* Бейджи */
 .badge {
     display: inline-block;
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 12px;
     font-weight: 600;
+    transition: all 0.3s;
+}
+
+.badge:hover {
+    transform: scale(1.1);
 }
 
 .badge-primary {
-    background: var(--accent);
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
     color: white;
 }
 
 .badge-secondary {
-    background: var(--secondary);
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
     color: white;
 }
 
@@ -181,3 +272,20 @@ textarea.form-control {
     color: var(--text-main);
     border: 1px solid #444;
 }
+
+.badge-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* Анимации для списков */
+.list-item {
+    animation: fadeInLeft 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+.list-item:nth-child(1) { animation-delay: 0.1s; }
+.list-item:nth-child(2) { animation-delay: 0.2s; }
+.list-item:nth-child(3) { animation-delay: 0.3s; }
+.list-item:nth-child(4) { animation-delay: 0.4s; }
+.list-item:nth-child(5) { animation-delay: 0.5s; }

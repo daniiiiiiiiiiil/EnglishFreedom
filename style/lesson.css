@@ -494,7 +494,47 @@
     content: "✓";
     font-size: 1.2rem;
 }
+.lesson-subtitle {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-top: 0.25rem;
+}
 
+.progress-bar-container {
+    width: 300px;
+}
+
+.exercise-feedback {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+}
+
+.exercise-feedback.correct {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+}
+
+.exercise-feedback.incorrect {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--danger);
+    border: 1px solid var(--danger);
+}
+
+.matching-game {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.matching-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
 /* Адаптивность */
 @media (max-width: 768px) {
     .lesson-header {
