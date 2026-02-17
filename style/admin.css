@@ -55,7 +55,7 @@
     margin-bottom: 2rem;
 }
 
-.admin-stat-card {
+.stat-card {
     background: var(--bg-card);
     padding: 1.5rem;
     border-radius: var(--radius);
@@ -68,7 +68,7 @@
     overflow: hidden;
 }
 
-.admin-stat-card::before {
+.stat-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -80,22 +80,22 @@
     transition: transform 0.5s;
 }
 
-.admin-stat-card:hover::before {
+.stat-card:hover::before {
     transform: translateX(100%);
 }
 
-.admin-stat-card:nth-child(1) { animation-delay: 0.1s; }
-.admin-stat-card:nth-child(2) { animation-delay: 0.2s; }
-.admin-stat-card:nth-child(3) { animation-delay: 0.3s; }
-.admin-stat-card:nth-child(4) { animation-delay: 0.4s; }
+.stat-card:nth-child(1) { animation-delay: 0.1s; }
+.stat-card:nth-child(2) { animation-delay: 0.2s; }
+.stat-card:nth-child(3) { animation-delay: 0.3s; }
+.stat-card:nth-child(4) { animation-delay: 0.4s; }
 
-.admin-stat-card:hover {
+.stat-card:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow: var(--shadow-lg);
     border-color: var(--accent);
 }
 
-.admin-stat-number {
+.stat-number {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
@@ -104,6 +104,23 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: scaleIn 0.6s ease-out;
+}
+
+.stat-number.primary {
+    color: var(--accent);
+    background: none;
+    -webkit-text-fill-color: var(--accent);
+}
+
+.stat-number.secondary {
+    color: var(--secondary);
+    background: none;
+    -webkit-text-fill-color: var(--secondary);
+}
+
+.stat-label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
 }
 
 .stat-users {
@@ -122,11 +139,6 @@
     color: var(--secondary);
 }
 
-.admin-stat-label {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
-
 /* Основной контейнер админ-панели */
 .admin-container {
     display: grid;
@@ -135,8 +147,16 @@
     margin-top: 2rem;
 }
 
+.admin-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
 @media (max-width: 992px) {
-    .admin-container {
+    .admin-container,
+    .admin-grid {
         grid-template-columns: 1fr;
     }
 }
@@ -484,6 +504,12 @@
     gap: 0.5rem;
 }
 
+.course-meta .rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
 .course-actions {
     display: flex;
     gap: 0.5rem;
@@ -785,6 +811,54 @@
     box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
 }
 
+/* Вспомогательные классы */
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.p-1 {
+    padding: 1rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gap-1 {
+    gap: 1rem;
+}
+
+.gap-05 {
+    gap: 0.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.overflow-auto {
+    overflow-x: auto;
+}
+
+.w-300 {
+    width: 300px;
+    max-width: 100%;
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
     .admin-header h1 {
@@ -800,7 +874,8 @@
         align-items: flex-start;
     }
     
-    .users-search {
+    .users-search,
+    .w-300 {
         width: 100%;
     }
     
@@ -828,7 +903,8 @@
         grid-template-columns: 1fr;
     }
     
-    .admin-stat-number {
+    .admin-stat-number,
+    .stat-number {
         font-size: 2rem;
     }
     

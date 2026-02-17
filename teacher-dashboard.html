@@ -9,155 +9,148 @@
     <link rel="stylesheet" href="style/components.css">
     <link rel="stylesheet" href="style/header.css">
     <link rel="stylesheet" href="style/footer.css">
-    <link rel="stylesheet" href="style/settings.css">
+    <link rel="stylesheet" href="style/teacher.css">
+    <link rel="stylesheet" href="style/teacher-dashboard.css">
 </head>
 <body>
-    <header>
-        <div class="logo">⭐ EnglishFreedom</div>
+    <header class="unified-header">
+        <a href="index.html" class="logo">⭐ EnglishFreedom</a>
         <nav>
             <a href="index.html">Home</a>
             <a href="teacher-dashboard.html" class="active">Teacher Panel</a>
             <a href="create-course.html">Create Course</a>
             <a href="create-lesson.html">Create Lesson</a>
         </nav>
-        <div class="auth-buttons">
-            <span style="color: var(--accent); margin-right: 15px;">👨‍🏫 Teacher</span>
-            <a href="index.html" class="btn btn-outline">Logout</a>
+        <div class="user-area">
+            <span class="badge badge-teacher">👨‍🏫 Teacher</span>
+            <div class="auth-buttons">
+                <a href="index.html" class="btn btn-outline">Logout</a>
+            </div>
         </div>
     </header>
 
-    <main>
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+    <main class="teacher-page">
+        <div class="teacher-header">
             <h1>Панель преподавателя</h1>
-            <div style="display: flex; gap: 1rem;">
-                <div style="background: #D1FAE5; color: #065F46; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold;">
-                    Преподаватель
-                </div>
-                <div style="background: var(--primary-light); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold;">
-                    Анна Смирнова
-                </div>
+            <div class="teacher-badges">
+                <span class="teacher-badge role">Преподаватель</span>
+                <span class="teacher-badge name">Анна Смирнова</span>
             </div>
         </div>
         
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div style="font-size: 2rem; color: var(--primary); font-weight: bold;">5</div>
-                <div>Курсов</div>
+        <div class="teacher-stats-grid">
+            <div class="teacher-stat-card">
+                <div class="teacher-stat-number primary">5</div>
+                <div class="teacher-stat-label">Курсов</div>
             </div>
-            <div class="stat-card">
-                <div style="font-size: 2rem; color: var(--secondary); font-weight: bold;">1,254</div>
-                <div>Студентов</div>
+            <div class="teacher-stat-card">
+                <div class="teacher-stat-number secondary">1,254</div>
+                <div class="teacher-stat-label">Студентов</div>
             </div>
-            <div class="stat-card">
-                <div style="font-size: 2rem; color: var(--primary); font-weight: bold;">4.8</div>
-                <div>Средний рейтинг</div>
+            <div class="teacher-stat-card">
+                <div class="teacher-stat-number primary">4.8</div>
+                <div class="teacher-stat-label">Средний рейтинг</div>
             </div>
-            <div class="stat-card">
-                <div style="font-size: 2rem; color: var(--secondary); font-weight: bold;">87%</div>
-                <div>Успеваемость</div>
+            <div class="teacher-stat-card">
+                <div class="teacher-stat-number secondary">87%</div>
+                <div class="teacher-stat-label">Успеваемость</div>
             </div>
         </div>
         
-        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; margin-top: 2rem;">
-            <div>
-                <h2>Мои курсы</h2>
-                <div class="card-grid">
-                    <div class="card">
+        <div class="teacher-content">
+            <div class="teacher-main">
+                <h2 class="teacher-section-title">Мои курсы</h2>
+                <div class="teacher-card-grid">
+                    <div class="teacher-course-card">
                         <h3>Beginner English (A1)</h3>
                         <p>Основы английского языка для начинающих</p>
-                        <div style="display: flex; justify-content: space-between; margin: 1rem 0;">
-                            <span>Студентов:</span>
-                            <span style="font-weight: bold;">856</span>
+                        <div class="teacher-course-stats">
+                            <div class="teacher-course-stat-row">
+                                <span class="teacher-course-stat-label">Студентов:</span>
+                                <span class="teacher-course-stat-value">856</span>
+                            </div>
+                            <div class="teacher-course-stat-row">
+                                <span class="teacher-course-stat-label">Рейтинг:</span>
+                                <span class="teacher-course-stat-value">⭐ 4.8</span>
+                            </div>
                         </div>
-                        <div style="display: flex; justify-content: space-between;">
-                            <span>Рейтинг:</span>
-                            <span style="font-weight: bold;">⭐ 4.8</span>
-                        </div>
-                        <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
-                            <button style="flex: 1; padding: 0.5rem; background: var(--primary); color: white; border: none; border-radius: var(--radius); cursor: pointer;">
-                                Редактировать
-                            </button>
-                            <button style="flex: 1; padding: 0.5rem; background: var(--light); border: 1px solid var(--border); border-radius: var(--radius); cursor: pointer;">
-                                Статистика
-                            </button>
+                        <div class="teacher-course-actions">
+                            <button class="teacher-course-btn primary">Редактировать</button>
+                            <button class="teacher-course-btn secondary">Статистика</button>
                         </div>
                     </div>
                     
-                    <div class="card">
+                    <div class="teacher-course-card">
                         <h3>Business English (B1)</h3>
                         <p>Английский для делового общения</p>
-                        <div style="display: flex; justify-content: space-between; margin: 1rem 0;">
-                            <span>Студентов:</span>
-                            <span style="font-weight: bold;">398</span>
+                        <div class="teacher-course-stats">
+                            <div class="teacher-course-stat-row">
+                                <span class="teacher-course-stat-label">Студентов:</span>
+                                <span class="teacher-course-stat-value">398</span>
+                            </div>
+                            <div class="teacher-course-stat-row">
+                                <span class="teacher-course-stat-label">Рейтинг:</span>
+                                <span class="teacher-course-stat-value">⭐ 4.7</span>
+                            </div>
                         </div>
-                        <div style="display: flex; justify-content: space-between;">
-                            <span>Рейтинг:</span>
-                            <span style="font-weight: bold;">⭐ 4.7</span>
-                        </div>
-                        <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
-                            <button style="flex: 1; padding: 0.5rem; background: var(--primary); color: white; border: none; border-radius: var(--radius); cursor: pointer;">
-                                Редактировать
-                            </button>
-                            <button style="flex: 1; padding: 0.5rem; background: var(--light); border: 1px solid var(--border); border-radius: var(--radius); cursor: pointer;">
-                                Статистика
-                            </button>
+                        <div class="teacher-course-actions">
+                            <button class="teacher-course-btn primary">Редактировать</button>
+                            <button class="teacher-course-btn secondary">Статистика</button>
                         </div>
                     </div>
                 </div>
                 
-                <div style="text-align: center; margin-top: 1rem;">
+                <div class="text-center mt-2">
                     <a href="create-course.html" class="btn btn-primary" style="padding: 1rem 2rem;">
                         + Создать новый курс
                     </a>
                 </div>
             </div>
             
-            <div>
-                <div class="card">
+            <div class="teacher-sidebar">
+                <div class="teacher-stats-card">
                     <h3>Статистика студентов</h3>
-                    <div style="margin-top: 1rem;">
-                        <div style="margin-bottom: 1rem;">
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
-                                <span>Начали курс:</span>
-                                <span>1,254</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 100%"></div>
-                            </div>
+                    <div class="teacher-progress-item">
+                        <div class="teacher-progress-header">
+                            <span class="teacher-progress-label">Начали курс:</span>
+                            <span class="teacher-progress-value">1,254</span>
                         </div>
-                        
-                        <div style="margin-bottom: 1rem;">
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
-                                <span>Завершили курс:</span>
-                                <span>589</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 47%"></div>
-                            </div>
+                        <div class="teacher-progress-bar">
+                            <div class="teacher-progress-fill" style="width: 100%"></div>
                         </div>
-                        
-                        <div>
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
-                                <span>Сдали тест:</span>
-                                <span>732</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 58%"></div>
-                            </div>
+                    </div>
+                    
+                    <div class="teacher-progress-item">
+                        <div class="teacher-progress-header">
+                            <span class="teacher-progress-label">Завершили курс:</span>
+                            <span class="teacher-progress-value">589</span>
+                        </div>
+                        <div class="teacher-progress-bar">
+                            <div class="teacher-progress-fill" style="width: 47%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="teacher-progress-item">
+                        <div class="teacher-progress-header">
+                            <span class="teacher-progress-label">Сдали тест:</span>
+                            <span class="teacher-progress-value">732</span>
+                        </div>
+                        <div class="teacher-progress-bar">
+                            <div class="teacher-progress-fill" style="width: 58%"></div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="card" style="margin-top: 1rem;">
+                <div class="teacher-actions-card">
                     <h3>Быстрые действия</h3>
-                    <div style="margin-top: 1rem;">
-                        <button style="width: 100%; padding: 0.75rem; background: var(--light); border: 1px solid var(--border); border-radius: var(--radius); cursor: pointer; margin-bottom: 0.5rem; text-align: left;">
+                    <div class="teacher-actions">
+                        <button class="teacher-action-btn">
                             + Добавить новый урок
                         </button>
-                        <button style="width: 100%; padding: 0.75rem; background: var(--light); border: 1px solid var(--border); border-radius: var(--radius); cursor: pointer; margin-bottom: 0.5rem; text-align: left;">
+                        <button class="teacher-action-btn">
                             📊 Посмотреть аналитику
                         </button>
-                        <button style="width: 100%; padding: 0.75rem; background: var(--light); border: 1px solid var(--border); border-radius: var(--radius); cursor: pointer; text-align: left;">
+                        <button class="teacher-action-btn">
                             📝 Проверить домашние задания
                         </button>
                     </div>
@@ -165,5 +158,29 @@
             </div>
         </div>
     </main>
+
+    <footer class="unified-footer">
+        <div class="footer-content">
+            <div>
+                <h4>EnglishFreedom</h4>
+                <p>Платформа для изучения английского языка</p>
+            </div>
+            <div>
+                <h4>Для преподавателей</h4>
+                <a href="create-course.html">Создать курс</a>
+                <a href="create-lesson.html">Создать урок</a>
+                <a href="#">Статистика</a>
+            </div>
+            <div>
+                <h4>Поддержка</h4>
+                <a href="#">Помощь</a>
+                <a href="#">FAQ</a>
+                <a href="#">Контакты</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 EnglishFreedom. Все права защищены.
+        </div>
+    </footer>
 </body>
 </html>

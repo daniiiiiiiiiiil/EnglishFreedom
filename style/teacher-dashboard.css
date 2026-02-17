@@ -1,0 +1,565 @@
+:root {
+    --accent: #B94CFF;
+    --accent-light: rgba(185, 76, 255, 0.1);
+    --danger: #EF4444;
+    --danger-light: rgba(239, 68, 68, 0.1);
+    --secondary: #10B981;
+    --secondary-light: rgba(16, 185, 129, 0.1);
+    --text-main: #E5E5E5;
+    --text-muted: #999;
+    --bg-card: #1E1E1E;
+    --bg-section: #252525;
+    --border: #333;
+    --radius: 8px;
+    --primary-light: rgba(185, 76, 255, 0.2);
+    --light: #2a2a2a;
+}
+
+/* Общие стили для страниц преподавателя */
+.teacher-page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.teacher-header {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.teacher-header h1 {
+    font-size: 2.5rem;
+    color: var(--text-main);
+    margin: 0;
+    background: linear-gradient(135deg, var(--text-main), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.teacher-badges {
+    display: flex;
+    gap: 1rem;
+}
+
+.teacher-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.teacher-badge:hover {
+    transform: translateY(-2px);
+}
+
+.teacher-badge.role {
+    background: #D1FAE5;
+    color: #065F46;
+}
+
+.teacher-badge.name {
+    background: var(--accent-light);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+}
+
+.teacher-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 2rem;
+    border: 1px solid var(--border);
+    margin-bottom: 2rem;
+    transition: var(--transition);
+}
+
+.teacher-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Статистика */
+.teacher-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.teacher-stat-card {
+    background: var(--bg-section);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid var(--border);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.teacher-stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+}
+
+.teacher-stat-card:hover::before {
+    transform: translateX(100%);
+}
+
+.teacher-stat-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 8px 20px rgba(185, 76, 255, 0.2);
+}
+
+.teacher-stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--text-main), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.2;
+}
+
+.teacher-stat-number.primary {
+    color: var(--accent);
+    -webkit-text-fill-color: var(--accent);
+}
+
+.teacher-stat-number.secondary {
+    color: var(--secondary);
+    -webkit-text-fill-color: var(--secondary);
+}
+
+.teacher-stat-label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Основной контент */
+.teacher-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .teacher-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Левая колонка */
+.teacher-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.teacher-section-title {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.teacher-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+/* Карточки курсов */
+.teacher-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.teacher-course-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.teacher-course-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--accent);
+    transform: scaleY(0);
+    transition: transform 0.3s;
+}
+
+.teacher-course-card:hover::before {
+    transform: scaleY(1);
+}
+
+.teacher-course-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 8px 24px rgba(185, 76, 255, 0.15);
+}
+
+.teacher-course-card h3 {
+    color: var(--text-main);
+    margin: 0 0 0.75rem 0;
+    font-size: 1.25rem;
+}
+
+.teacher-course-card p {
+    color: var(--text-muted);
+    margin: 0 0 1rem 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.teacher-course-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.teacher-course-stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.teacher-course-stat-label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.teacher-course-stat-value {
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.teacher-course-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.teacher-course-btn {
+    flex: 1;
+    padding: 0.75rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    font-size: 0.9rem;
+    border: none;
+}
+
+.teacher-course-btn.primary {
+    background: var(--accent);
+    color: white;
+}
+
+.teacher-course-btn.primary:hover {
+    background: #a233ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(185, 76, 255, 0.3);
+}
+
+.teacher-course-btn.secondary {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-main);
+}
+
+.teacher-course-btn.secondary:hover {
+    background: var(--bg-section);
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+/* Центрирование текста */
+.text-center {
+    text-align: center;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gap-1 {
+    gap: 1rem;
+}
+
+/* Правая колонка */
+.teacher-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Статистика студентов */
+.teacher-stats-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+}
+
+.teacher-stats-card h3 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+}
+
+.teacher-progress-item {
+    margin-bottom: 1rem;
+}
+
+.teacher-progress-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.teacher-progress-label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.teacher-progress-value {
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.teacher-progress-bar {
+    height: 8px;
+    background: var(--bg-section);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.teacher-progress-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+/* Быстрые действия */
+.teacher-actions-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+}
+
+.teacher-actions-card h3 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+}
+
+.teacher-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.teacher-action-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--bg-section);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text-main);
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: left;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.teacher-action-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(185, 76, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.teacher-action-btn:hover::before {
+    left: 100%;
+}
+
+.teacher-action-btn:hover {
+    background: var(--bg-card);
+    border-color: var(--accent);
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(185, 76, 255, 0.1);
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .teacher-card-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    
+    .teacher-page {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .teacher-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .teacher-header h1 {
+        font-size: 2rem;
+    }
+    
+    .teacher-card {
+        padding: 1.5rem;
+    }
+    
+    .teacher-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .teacher-card-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .teacher-course-actions {
+        flex-direction: column;
+    }
+    
+    .teacher-action-btn {
+        padding: 0.875rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .teacher-page {
+        padding: 0 15px;
+    }
+    
+    .teacher-card {
+        padding: 1.25rem;
+    }
+    
+    .teacher-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .teacher-course-card {
+        padding: 1.25rem;
+    }
+    
+    .teacher-badges {
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    .teacher-badge {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.teacher-stat-card,
+.teacher-course-card,
+.teacher-action-btn {
+    animation: fadeInUp 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+.teacher-stat-card:nth-child(1) { animation-delay: 0.1s; }
+.teacher-stat-card:nth-child(2) { animation-delay: 0.2s; }
+.teacher-stat-card:nth-child(3) { animation-delay: 0.3s; }
+.teacher-stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+.teacher-course-card:nth-child(1) { animation-delay: 0.1s; }
+.teacher-course-card:nth-child(2) { animation-delay: 0.2s; }

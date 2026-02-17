@@ -31,218 +31,180 @@
     </header>
    
     <main>
-        <h1 style="margin-bottom: 2rem;">Административная панель</h1>
+        <h1 class="mb-2">Административная панель</h1>
         
-        <div class="stats-grid">
+        <div class="admin-stats-grid">
             <div class="stat-card">
-                <div style="font-size: 2rem; color: var(--primary); font-weight: bold;">2,587</div>
-                <div>Всего пользователей</div>
+                <div class="stat-number primary">2,587</div>
+                <div class="stat-label">Всего пользователей</div>
             </div>
             <div class="stat-card">
-                <div style="font-size: 2rem; color: var(--secondary); font-weight: bold;">18</div>
-                <div>Курсов</div>
+                <div class="stat-number secondary">18</div>
+                <div class="stat-label">Курсов</div>
             </div>
             <div class="stat-card">
-                <div style="font-size: 2rem; color: var(--primary); font-weight: bold;">7</div>
-                <div>Преподавателей</div>
+                <div class="stat-number primary">7</div>
+                <div class="stat-label">Преподавателей</div>
             </div>
             <div class="stat-card">
-                <div style="font-size: 2rem; color: var(--secondary); font-weight: bold;">₽ 124,850</div>
-                <div>Выручка</div>
+                <div class="stat-number secondary">₽ 124,850</div>
+                <div class="stat-label">Выручка</div>
             </div>
         </div>
         
-        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; margin-top: 2rem;">
+        <div class="admin-grid">
             <div>
                 <div class="card">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <div class="users-management-header">
                         <h2>Управление пользователями</h2>
-                        <input type="text" class="form-control" placeholder="Поиск пользователя..." style="width: 300px;">
+                        <input type="text" class="form-control users-search" placeholder="Поиск пользователя...">
                     </div>
                     
-                    <div style="overflow-x: auto;">
-                        <table style="width: 100%; border-collapse: collapse;">
+                    <div class="users-table-container">
+                        <table class="users-table">
                             <thead>
-                                <tr style="background: var(--light);">
-                                    <th style="padding: 1rem; text-align: left;">Имя</th>
-                                    <th style="padding: 1rem; text-align: left;">Email</th>
-                                    <th style="padding: 1rem; text-align: left;">Роль</th>
-                                    <th style="padding: 1rem; text-align: left;">Дата регистрации</th>
-                                    <th style="padding: 1rem; text-align: left;">Действия</th>
+                                <tr>
+                                    <th>Имя</th>
+                                    <th>Email</th>
+                                    <th>Роль</th>
+                                    <th>Дата регистрации</th>
+                                    <th>Действия</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr style="border-bottom: 1px solid var(--border);">
-                                    <td style="padding: 1rem;">Александр Смирнов</td>
-                                    <td style="padding: 1rem;">alex@example.com</td>
-                                    <td style="padding: 1rem;">
-                                        <span style="background: #D1FAE5; color: #065F46; padding: 0.25rem 0.5rem; border-radius: 4px;">
-                                            Студент
-                                        </span>
+                                <tr>
+                                    <td>Александр Смирнов</td>
+                                    <td>alex@example.com</td>
+                                    <td>
+                                        <span class="role-badge role-student">Студент</span>
                                     </td>
-                                    <td style="padding: 1rem;">15.03.2024</td>
-                                    <td style="padding: 1rem;">
-                                        <button style="padding: 0.25rem 0.5rem; background: var(--light); border: 1px solid var(--border); border-radius: 4px; cursor: pointer; margin-right: 0.5rem;">
-                                            Редактировать
-                                        </button>
-                                        <button style="padding: 0.25rem 0.5rem; background: #FEE2E2; color: #991B1B; border: 1px solid #FCA5A5; border-radius: 4px; cursor: pointer;">
-                                            Блокировать
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr style="border-bottom: 1px solid var(--border);">
-                                    <td style="padding: 1rem;">Анна Смирнова</td>
-                                    <td style="padding: 1rem;">anna@example.com</td>
-                                    <td style="padding: 1rem;">
-                                        <span style="background: #DBEAFE; color: #1E40AF; padding: 0.25rem 0.5rem; border-radius: 4px;">
-                                            Преподаватель
-                                        </span>
-                                    </td>
-                                    <td style="padding: 1rem;">10.02.2024</td>
-                                    <td style="padding: 1rem;">
-                                        <button style="padding: 0.25rem 0.5rem; background: var(--light); border: 1px solid var(--border); border-radius: 4px; cursor: pointer; margin-right: 0.5rem;">
-                                            Редактировать
-                                        </button>
-                                        <button style="padding: 0.25rem 0.5rem; background: #FEE2E2; color: #991B1B; border: 1px solid #FCA5A5; border-radius: 4px; cursor: pointer;">
-                                            Блокировать
-                                        </button>
+                                    <td>15.03.2024</td>
+                                    <td>
+                                        <button class="edit-btn">Редактировать</button>
+                                        <button class="ban-btn">Блокировать</button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="padding: 1rem;">Администратор</td>
-                                    <td style="padding: 1rem;">admin@englishfreedom.com</td>
-                                    <td style="padding: 1rem;">
-                                        <span style="background: #FEF3C7; color: #92400E; padding: 0.25rem 0.5rem; border-radius: 4px;">
-                                            Администратор
-                                        </span>
+                                    <td>Анна Смирнова</td>
+                                    <td>anna@example.com</td>
+                                    <td>
+                                        <span class="role-badge role-teacher">Преподаватель</span>
                                     </td>
-                                    <td style="padding: 1rem;">01.01.2024</td>
-                                    <td style="padding: 1rem;">
-                                        <button style="padding: 0.25rem 0.5rem; background: var(--light); border: 1px solid var(--border); border-radius: 4px; cursor: pointer;">
-                                            Редактировать
-                                        </button>
+                                    <td>10.02.2024</td>
+                                    <td>
+                                        <button class="edit-btn">Редактировать</button>
+                                        <button class="ban-btn">Блокировать</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Администратор</td>
+                                    <td>admin@englishfreedom.com</td>
+                                    <td>
+                                        <span class="role-badge role-admin">Администратор</span>
+                                    </td>
+                                    <td>01.01.2024</td>
+                                    <td>
+                                        <button class="edit-btn">Редактировать</button>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
-                        <div>
+                    <div class="users-pagination">
+                        <div class="pagination-info">
                             Показано 3 из 2,587 пользователей
                         </div>
-                        <div style="display: flex; gap: 0.5rem;">
-                            <button style="padding: 0.5rem; background: var(--light); border: 1px solid var(--border); border-radius: 4px; cursor: pointer;">
-                                ←
-                            </button>
-                            <button style="padding: 0.5rem 1rem; background: var(--primary); color: white; border: none; border-radius: 4px; cursor: pointer;">
-                                1
-                            </button>
-                            <button style="padding: 0.5rem; background: var(--light); border: 1px solid var(--border); border-radius: 4px; cursor: pointer;">
-                                →
-                            </button>
+                        <div class="pagination-controls">
+                            <button class="pagination-btn prev"></button>
+                            <button class="pagination-btn active">1</button>
+                            <button class="pagination-btn next"></button>
                         </div>
                     </div>
                 </div>
                 
-                <div class="card" style="margin-top: 2rem;">
+                <div class="card mt-2">
                     <h2>Управление курсами</h2>
-                    <div style="margin-top: 1rem;">
-                        <div style="display: flex; justify-content: space-between; padding: 1rem; background: var(--light); border-radius: var(--radius); margin-bottom: 1rem;">
-                            <div>
-                                <div style="font-weight: bold;">Beginner English (A1)</div>
-                                <div style="color: var(--gray);">856 студентов · 4.8⭐</div>
+                    <div class="courses-list">
+                        <div class="course-item">
+                            <div class="course-info">
+                                <div class="course-name">Beginner English (A1)</div>
+                                <div class="course-meta">856 студентов · 4.8⭐</div>
                             </div>
-                            <div style="display: flex; gap: 0.5rem;">
-                                <button style="padding: 0.5rem 1rem; background: var(--light); border: 1px solid var(--border); border-radius: var(--radius); cursor: pointer;">
-                                    Редактировать
-                                </button>
-                                <button style="padding: 0.5rem 1rem; background: #FEE2E2; color: #991B1B; border: 1px solid #FCA5A5; border-radius: var(--radius); cursor: pointer;">
-                                    Удалить
-                                </button>
+                            <div class="course-actions">
+                                <button class="manage-btn">Редактировать</button>
+                                <button class="delete-btn">Удалить</button>
                             </div>
                         </div>
                         
-                        <div style="display: flex; justify-content: space-between; padding: 1rem; background: var(--light); border-radius: var(--radius);">
-                            <div>
-                                <div style="font-weight: bold;">Business English (B1)</div>
-                                <div style="color: var(--gray);">398 студентов · 4.7⭐</div>
+                        <div class="course-item">
+                            <div class="course-info">
+                                <div class="course-name">Business English (B1)</div>
+                                <div class="course-meta">398 студентов · 4.7⭐</div>
                             </div>
-                            <div style="display: flex; gap: 0.5rem;">
-                                <button style="padding: 0.5rem 1rem; background: var(--light); border: 1px solid var(--border); border-radius: var(--radius); cursor: pointer;">
-                                    Редактировать
-                                </button>
-                                <button style="padding: 0.5rem 1rem; background: #FEE2E2; color: #991B1B; border: 1px solid #FCA5A5; border-radius: var(--radius); cursor: pointer;">
-                                    Удалить
-                                </button>
+                            <div class="course-actions">
+                                <button class="manage-btn">Редактировать</button>
+                                <button class="delete-btn">Удалить</button>
                             </div>
                         </div>
                     </div>
                     
-                    <div style="text-align: center; margin-top: 1rem;">
-                        <a href="create-course.html" class="btn btn-primary">
-                            + Добавить новый курс
+                    <div class="text-center mt-1">
+                        <a href="create-course.html" class="btn btn-primary add-course-btn">
+                            Добавить новый курс
                         </a>
                     </div>
                 </div>
             </div>
             
-            <div>
-                <div class="card">
+            <div class="admin-sidebar">
+                <div class="card system-info-card">
                     <h2>Системная информация</h2>
-                    <div style="margin-top: 1rem;">
-                        <div style="margin-bottom: 1rem;">
-                            <div style="font-weight: bold;">Статус системы</div>
-                            <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem;">
-                                <div style="width: 10px; height: 10px; background: var(--secondary); border-radius: 50%;"></div>
-                                <span>Все системы работают нормально</span>
-                            </div>
+                    <div class="system-status">
+                        <div class="system-status-label">Статус системы</div>
+                        <div class="status-indicator">
+                            <div class="status-dot online"></div>
+                            <span class="status-text">Все системы работают нормально</span>
                         </div>
-                        
-                        <div style="margin-bottom: 1rem;">
-                            <div style="font-weight: bold;">Последнее обновление</div>
-                            <div style="margin-top: 0.5rem;">Сегодня, 09:15</div>
+                    </div>
+                    
+                    <div class="last-update">
+                        <div class="last-update-label">Последнее обновление</div>
+                        <div class="last-update-time">Сегодня, 09:15</div>
+                    </div>
+                    
+                    <div class="disk-usage">
+                        <div class="disk-usage-label">Использование диска</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%"></div>
                         </div>
-                        
-                        <div>
-                            <div style="font-weight: bold;">Использование диска</div>
-                            <div class="progress-bar" style="margin: 0.5rem 0;">
-                                <div class="progress-fill" style="width: 65%"></div>
-                            </div>
-                            <div>65% из 100 GB</div>
-                        </div>
+                        <div class="disk-usage-info">65% из 100 GB</div>
                     </div>
                 </div>
                 
-                <div class="card" style="margin-top: 1rem;">
+                <div class="card quick-actions-card">
                     <h2>Быстрые действия</h2>
-                    <div style="margin-top: 1rem;">
-                        <button style="width: 100%; padding: 0.75rem; background: var(--light); border: 1px solid var(--border); border-radius: var(--radius); cursor: pointer; margin-bottom: 0.5rem; text-align: left;">
-                            📧 Отправить уведомление всем
-                        </button>
-                        <button style="width: 100%; padding: 0.75rem; background: var(--light); border: 1px solid var(--border); border-radius: var(--radius); cursor: pointer; margin-bottom: 0.5rem; text-align: left;">
-                            📊 Смотреть детальную аналитику
-                        </button>
-                        <button style="width: 100%; padding: 0.75rem; background: var(--light); border: 1px solid var(--border); border-radius: var(--radius); cursor: pointer; text-align: left;">
-                            ⚙️ Настройки системы
-                        </button>
+                    <div class="action-buttons">
+                        <button class="action-btn">📧 Отправить уведомление всем</button>
+                        <button class="action-btn">📊 Смотреть детальную аналитику</button>
+                        <button class="action-btn">⚙️ Настройки системы</button>
                     </div>
                 </div>
                 
-                <div class="card" style="margin-top: 1rem;">
+                <div class="card activity-card">
                     <h2>Недавняя активность</h2>
-                    <div style="margin-top: 1rem;">
-                        <div style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">
-                            <div style="font-size: 0.9rem;">Новый пользователь зарегистрирован</div>
-                            <div style="color: var(--gray); font-size: 0.8rem;">10 минут назад</div>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-text">Новый пользователь зарегистрирован</div>
+                            <div class="activity-time">10 минут назад</div>
                         </div>
-                        <div style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">
-                            <div style="font-size: 0.9rem;">Курс "Business English" обновлён</div>
-                            <div style="color: var(--gray); font-size: 0.8rem;">2 часа назад</div>
+                        <div class="activity-item">
+                            <div class="activity-text">Курс "Business English" обновлён</div>
+                            <div class="activity-time">2 часа назад</div>
                         </div>
-                        <div style="padding: 0.5rem 0;">
-                            <div style="font-size: 0.9rem;">Создан новый урок</div>
-                            <div style="color: var(--gray); font-size: 0.8rem;">Вчера, 16:30</div>
+                        <div class="activity-item">
+                            <div class="activity-text">Создан новый урок</div>
+                            <div class="activity-time">Вчера, 16:30</div>
                         </div>
                     </div>
                 </div>
