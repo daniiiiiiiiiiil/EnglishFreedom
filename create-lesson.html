@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание урока - EnglishFreedom</title>
+    <link rel="stylesheet" href="/style/create-course.css">
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/button.css">
+    <link rel="stylesheet" href="style/components.css">
+    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/footer.css">
+</head>
+<body>
+    <header class="unified-header">
+        <a href="index.html" class="logo">⭐ EnglishFreedom</a>
+        <nav>
+            <a href="teacher-dashboard.html" id="nav-dashboard">Панель</a>
+            <a href="create-course.html" id="nav-courses">Создать курс</a>
+             <a href="create-lesson.html" id="nav-courses">Создать урок</a>
+        </nav>
+        <div class="user-area">
+            <div class="auth-buttons">
+                <a href="index.html" class="btn btn-outline">Выйти</a>
+            </div>
+        </div>
+    </header>
+    
+
+    <main>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <h1>Создание нового урока</h1>
+            <div>
+                <select class="form-control" style="width: 250px;">
+                    <option>Выберите курс: Beginner English</option>
+                    <option>Business English</option>
+                    <option>Travel English</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="card">
+            <form>
+                <div class="form-group">
+                    <label for="lesson-title">Название урока</label>
+                    <input type="text" id="lesson-title" class="form-control" placeholder="Например: Present Simple Tense">
+                </div>
+                
+                <div class="form-group">
+                    <label for="lesson-description">Краткое описание</label>
+                    <textarea id="lesson-description" class="form-control" rows="2" placeholder="О чём этот урок..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="lesson-video">Ссылка на видео (YouTube или Vimeo)</label>
+                    <input type="text" id="lesson-video" class="form-control" placeholder="https://youtube.com/watch?v=...">
+                </div>
+                
+                <div class="form-group">
+                    <label>Теоретический материал</label>
+                    <div style="margin-top: 0.5rem;">
+                        <div style="border: 1px solid var(--border); border-radius: var(--radius); min-height: 200px; padding: 1rem;">
+                            <p>Введите текст урока здесь...</p>
+                            <p>Вы можете использовать форматирование:</p>
+                            <ul>
+                                <li>Списки</li>
+                                <li><strong>Жирный текст</strong></li>
+                                <li><em>Курсив</em></li>
+                            </ul>
+                            <p>И вставлять примеры:</p>
+                            <div style="background: var(--light); padding: 1rem; border-radius: var(--radius); margin: 1rem 0;">
+                                <strong>Пример:</strong> I work every day.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Слова урока</label>
+                    <div style="margin-top: 0.5rem;">
+                        <div style="display: grid; grid-template-columns: 2fr 2fr 1fr 1fr; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="text" class="form-control" placeholder="Английское слово">
+                            <input type="text" class="form-control" placeholder="Перевод">
+                            <input type="text" class="form-control" placeholder="Транскрипция">
+                            <button type="button" style="background: var(--light); border: 1px solid var(--border); border-radius: var(--radius); cursor: pointer;">
+                                +
+                            </button>
+                        </div>
+                        <div style="background: var(--light); padding: 1rem; border-radius: var(--radius);">
+                            <div style="display: grid; grid-template-columns: 2fr 2fr 1fr 1fr; gap: 0.5rem; margin-bottom: 0.5rem; padding: 0.5rem; border-bottom: 1px solid white;">
+                                <div><strong>book</strong></div>
+                                <div>книга</div>
+                                <div>/bʊk/</div>
+                                <div>
+                                    <button type="button" style="padding: 0.25rem 0.5rem; background: #EF4444; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                                        ×
+                                    </button>
+                                </div>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 2fr 2fr 1fr 1fr; gap: 0.5rem; padding: 0.5rem;">
+                                <div><strong>pen</strong></div>
+                                <div>ручка</div>
+                                <div>/pen/</div>
+                                <div>
+                                    <button type="button" style="padding: 0.25rem 0.5rem; background: #EF4444; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                                        ×
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Задания урока</label>
+                    <div style="margin-top: 0.5rem;">
+                        <div style="background: var(--light); padding: 1rem; border-radius: var(--radius); margin-bottom: 1rem;">
+                            <h4>Задание 1: Multiple Choice</h4>
+                            <p><strong>Вопрос:</strong> Выберите правильный перевод слова "book"</p>
+                            <p><strong>Варианты:</strong> стол, книга, ручка, окно</p>
+                            <p><strong>Правильный ответ:</strong> книга</p>
+                            <button type="button" style="margin-top: 0.5rem; padding: 0.5rem 1rem; background: #EF4444; color: white; border: none; border-radius: var(--radius); cursor: pointer;">
+                                Удалить задание
+                            </button>
+                        </div>
+                        
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+                            <select class="form-control">
+                                <option>Выберите тип задания</option>
+                                <option>Multiple Choice</option>
+                                <option>Fill in the Blank</option>
+                                <option>Matching</option>
+                                <option>True/False</option>
+                                <option>Listening</option>
+                            </select>
+                            <button type="button" style="padding: 0.5rem 1rem; background: var(--primary); color: white; border: none; border-radius: var(--radius); cursor: pointer;">
+                                + Добавить задание
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border);">
+                    <div>
+                        <label>
+                            <input type="checkbox">
+                            Опубликовать урок сразу
+                        </label>
+                    </div>
+                    <div style="display: flex; gap: 1rem;">
+                        <button type="submit" class="btn btn-primary" style="padding: 1rem 2rem;">
+                            Сохранить урок
+                        </button>
+                        <button type="button" class="btn btn-outline" style="padding: 1rem 2rem;">
+                            Предпросмотр
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginner English - EnglishFreedom</title>
+    <!-- Подключение всех CSS файлов -->
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/button.css">
+    <link rel="stylesheet" href="style/components.css">
+    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="style/course-detail.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="unified-header">
+        <a href="index.html" class="logo">⭐ EnglishFreedom</a>
+        <nav>
+            <a href="index.html" id="nav-home">Главная</a>
+            <a href="courses.html" id="nav-courses">Курсы</a>
+            <a href="dashboard.html" id="nav-dashboard">Кабинет</a>
+            <a href="vocabulary.html" id="nav-vocabulary">Словарь</a>
+            <a href="progress.html" id="nav-progress">Прогресс</a>
+        </nav>
+        <div class="user-area">
+            <div class="user-info">
+                <div class="user-avatar">А</div>
+                <div>Александр</div>
+                <div class="user-role student">Студент</div>
+            </div>
+            <div class="auth-buttons">
+                <a href="dashboard.html" class="btn btn-primary">Мой кабинет</a>
+            </div>
+        </div>
+    </header>
+
+     <main class="container">
+        <div class="course-hero">
+            <h1 class="course-title">Beginner English (A1)</h1>
+            <p class="course-subtitle">Основы английского языка для абсолютных начинающих.</p>
+            
+            <div class="course-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Уровень</span>
+                    <span class="level-badge">A1 - Beginner</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Уроков</span>
+                    <span class="meta-value">30</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Длительность</span>
+                    <span class="meta-value">2 месяца</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Рейтинг</span>
+                    <div class="meta-value rating-stars">⭐⭐⭐⭐⭐ 4.8 (156 отзывов)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="course-progress-section">
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 20%"></div>
+                </div>
+            </div>
+            <div class="progress-text">Прогресс: 20% завершено</div>
+        </div>
+
+        <div class="course-content">
+            <div>
+                <div class="course-description">
+                    <h2 class="section-title">О курсе</h2>
+                    <p>
+                        Этот курс предназначен для тех, кто только начинает изучать английский язык. Вы научитесь основам грамматики, пополните словарный запас и сможете вести простые диалоги на повседневные темы. 
+                        Курс построен по принципу "от простого к сложному", что позволяет постепенно осваивать материал без стресса.
+                    </p>
+                    <p>
+                        Каждый урок включает в себя интерактивные упражнения, аудиоматериалы для развития восприятия речи на слух, и практические задания для закрепления материала. 
+                        По окончании курса вы получите сертификат, подтверждающий ваши знания уровня A1.
+                    </p>
+                </div>
+
+                <!-- Что вы научитесь -->
+                <div class="learning-objectives">
+                    <h2 class="section-title">Чему вы научитесь</h2>
+                    <div class="objectives-list">
+                        <div class="objective-item">
+                            <span class="objective-icon">✓</span>
+                            <span>Основные времена английского языка</span>
+                        </div>
+                        <div class="objective-item">
+                            <span class="objective-icon">✓</span>
+                            <span>500+ самых используемых слов</span>
+                        </div>
+                        <div class="objective-item">
+                            <span class="objective-icon">✓</span>
+                            <span>Построение простых предложений</span>
+                        </div>
+                        <div class="objective-item">
+                            <span class="objective-icon">✓</span>
+                            <span>Общение на повседневные темы</span>
+                        </div>
+                        <div class="objective-item">
+                            <span class="objective-icon">✓</span>
+                            <span>Правильное произношение</span>
+                        </div>
+                        <div class="objective-item">
+                            <span class="objective-icon">✓</span>
+                            <span>Чтение и понимание простых текстов</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Программа курса -->
+                <div class="course-program">
+                    <h2 class="section-title">Программа курса</h2>
+                    
+                    <!-- Модуль 1 -->
+                    <div class="module" id="module-1">
+                        <div class="module-header" onclick="toggleModule('module-1')">
+                            <div>
+                                <div class="module-title">Модуль 1: Основы</div>
+                                <div class="module-meta">10 уроков · 5 часов</div>
+                            </div>
+                            <div class="module-toggle">▶</div>
+                        </div>
+                        <div class="lesson-list">
+                            <div class="lesson-item">
+                                <div class="lesson-status status-completed"></div>
+                                <div class="lesson-info">
+                                    <div class="lesson-title">Урок 1: Алфавит и произношение</div>
+                                    <div class="lesson-duration">45 минут</div>
+                                </div>
+                                <a href="lesson.html" class="lesson-action">Просмотреть</a>
+                            </div>
+                            <div class="lesson-item">
+                                <div class="lesson-status status-completed"></div>
+                                <div class="lesson-info">
+                                    <div class="lesson-title">Урок 2: Приветствия и прощания</div>
+                                    <div class="lesson-duration">55 минут</div>
+                                </div>
+                                <a href="lesson.html" class="lesson-action">Просмотреть</a>
+                            </div>
+                            <div class="lesson-item">
+                                <div class="lesson-status status-current"></div>
+                                <div class="lesson-info">
+                                    <div class="lesson-title">Урок 3: Числа и цвета</div>
+                                    <div class="lesson-duration">60 минут</div>
+                                </div>
+                                <a href="lesson.html" class="lesson-action">Продолжить</a>
+                            </div>
+                            <div class="lesson-item">
+                                <div class="lesson-status status-locked"></div>
+                                <div class="lesson-info">
+                                    <div class="lesson-title">Урок 4: Моя семья</div>
+                                    <div class="lesson-duration">50 минут</div>
+                                </div>
+                                <div class="lesson-action">Заблокировано</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Модуль 2 -->
+                    <div class="module" id="module-2">
+                        <div class="module-header" onclick="toggleModule('module-2')">
+                            <div>
+                                <div class="module-title">Модуль 2: Повседневное общение</div>
+                                <div class="module-meta">10 уроков · 7 часов</div>
+                            </div>
+                            <div class="module-toggle">▶</div>
+                        </div>
+                        <div class="lesson-list">
+                            <div class="lesson-item">
+                                <div class="lesson-status status-locked"></div>
+                                <div class="lesson-info">
+                                    <div class="lesson-title">Урок 11: В ресторане</div>
+                                    <div class="lesson-duration">65 минут</div>
+                                </div>
+                                <div class="lesson-action">Заблокировано</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Модуль 3 -->
+                    <div class="module" id="module-3">
+                        <div class="module-header" onclick="toggleModule('module-3')">
+                            <div>
+                                <div class="module-title">Модуль 3: Грамматика</div>
+                                <div class="module-meta">10 уроков · 8 часов</div>
+                            </div>
+                            <div class="module-toggle">▶</div>
+                        </div>
+                        <div class="lesson-list">
+                            <!-- Уроки модуля 3 будут здесь -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Кнопка продолжения -->
+                <a href="lesson.html" class="btn btn-primary continue-button">
+                    Продолжить с урока 3: Числа и цвета
+                </a>
+            </div>
+
+            <!-- Правая колонка -->
+            <div class="course-sidebar">
+                <!-- Информация о курсе -->
+                <div class="info-card">
+                    <h3>Информация о курсе</h3>
+                    <div class="info-list">
+                        <div class="info-item">
+                            <span class="info-label">Студентов</span>
+                            <span class="info-value">1,254</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Длительность</span>
+                            <span class="info-value">20 часов</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Сертификат</span>
+                            <span class="info-value">Да</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Доступ</span>
+                            <span class="info-value">Навсегда</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Формат</span>
+                            <span class="info-value">Видео + Задания</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Поддержка</span>
+                            <span class="info-value">24/7</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Преподаватель -->
+                <div class="teacher-card">
+                    <h3>Преподаватель</h3>
+                    <div class="teacher-info">
+                        <div class="teacher-avatar">АС</div>
+                        <div class="teacher-details">
+                            <div class="teacher-name">Анна Смирнова</div>
+                            <div class="teacher-title">Преподаватель английского языка</div>
+                            <div class="teacher-experience">
+                                <span>⏳</span>
+                                <span>8 лет опыта преподавания</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Отзывы -->
+                <div class="reviews-card">
+                    <h3>Отзывы студентов</h3>
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="reviewer-name">Иван Петров</div>
+                            <div class="review-rating">
+                                <span class="star-filled">★</span>
+                                <span class="star-filled">★</span>
+                                <span class="star-filled">★</span>
+                                <span class="star-filled">★</span>
+                                <span class="star-filled">★</span>
+                            </div>
+                        </div>
+                        <p class="review-text">
+                            Отличный курс для начинающих! Всё объясняется очень доступно, материал подается постепенно. Особенно понравились интерактивные задания.
+                        </p>
+                    </div>
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="reviewer-name">Мария Иванова</div>
+                            <div class="review-rating">
+                                <span class="star-filled">★</span>
+                                <span class="star-filled">★</span>
+                                <span class="star-filled">★</span>
+                                <span class="star-filled">★</span>
+                                <span class="star-filled">★</span>
+                            </div>
+                        </div>
+                        <p class="review-text">
+                            Наконец-то нашла курс, который действительно помогает начать говорить. Преподаватель объясняет всё очень понятно, уроки интересные.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Футер курса -->
+        <div class="course-footer">
+            <h3>Начните обучение сегодня</h3>
+            <a href="lesson.html" class="btn btn-primary continue-button">
+                Начать бесплатный урок
+            </a>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="unified-footer">
+        <div class="footer-content">
+            <div>
+                <h4>EnglishFreedom</h4>
+                <p>Ваш путь к свободному владению английским</p>
+            </div>
+            <div>
+                <h4>Курсы</h4>
+                <a href="courses.html">Все курсы</a>
+                <a href="course-detail.html">Beginner English</a>
+                <a href="courses.html">Business English</a>
+                <a href="courses.html">Travel English</a>
+            </div>
+            <div>
+                <h4>Обучение</h4>
+                <a href="lesson.html">Уроки</a>
+                <a href="exercise.html">Упражнения</a>
+                <a href="test.html">Тесты</a>
+                <a href="vocabulary.html">Словарь</a>
+            </div>
+            <div>
+                <h4>Поддержка</h4>
+                <a href="#">FAQ</a>
+                <a href="#">Контакты</a>
+                <a href="#">О нас</a>
+                <a href="#">Политика конфиденциальности</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 EnglishFreedom. Все права защищены.
+        </div>
+    </footer>
+
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+        window.toggleModule = function(moduleId) {
+            const module = document.getElementById(moduleId);
+            const lessonList = module.querySelector('.lesson-list');
+            const toggleIcon = module.querySelector('.module-toggle');
+            
+            lessonList.classList.toggle('expanded');
+            toggleIcon.classList.toggle('expanded');
+        };
+        
+        const firstModule = document.getElementById('module-1');
+        if (firstModule) {
+            const lessonList = firstModule.querySelector('.lesson-list');
+            const toggleIcon = firstModule.querySelector('.module-toggle');
+            lessonList?.classList.add('expanded');
+            toggleIcon?.classList.add('expanded');
+        }                
+            const modules = document.querySelectorAll('.module');
+            modules.forEach(module => {
+                module.addEventListener('click', function(e) {
+                    if (e.target.closest('.module-header')) {
+                        const moduleId = this.id;
+                        toggleModule(moduleId);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

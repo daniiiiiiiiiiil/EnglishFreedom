@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог курсов - EnglishFreedom</title>
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/button.css">
+    <link rel="stylesheet" href="style/components.css">
+    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="style/courses.css">
+</head>
+<body>
+    <header class="unified-header">
+        <a href="index.html" class="logo">⭐ EnglishFreedom</a>
+        <nav>
+            <a href="index.html" id="nav-home">Главная</a>
+            <a href="courses.html" id="nav-courses" class="active">Курсы</a>
+            <a href="dashboard.html" id="nav-dashboard">Кабинет</a>
+            <a href="teacher-dashboard.html" id="nav-teacher">Учителю</a>
+            <a href="vocabulary.html" id="nav-vocabulary">Словарь</a>
+            <a href="progress.html" id="nav-progress">Прогресс</a>
+        </nav>
+        <div class="user-area">
+            <div class="auth-buttons">
+                <a href="dashboard.html" class="btn btn-primary">Мой кабинет</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Заголовок и поиск -->
+        <div class="courses-header">
+            <h1>Каталог курсов</h1>
+            <div class="search-filter">
+                <input type="text" placeholder="Поиск курсов..." class="form-control">
+                <select class="form-control" style="width: 200px;">
+                    <option>Сортировка: По популярности</option>
+                    <option>По рейтингу</option>
+                    <option>По новизне</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Фильтры -->
+        <div class="filters-container">
+            <div class="filter-group">
+                <h3>Уровень</h3>
+                <div class="filter-options">
+                    <label><input type="checkbox" checked> Все уровни</label>
+                    <label><input type="checkbox"> Beginner (A1)</label>
+                    <label><input type="checkbox"> Elementary (A2)</label>
+                    <label><input type="checkbox"> Intermediate (B1)</label>
+                    <label><input type="checkbox"> Upper-Intermediate (B2)</label>
+                </div>
+            </div>
+            <div class="filter-group">
+                <h3>Тема</h3>
+                <div class="filter-options">
+                    <label><input type="checkbox" checked> Все темы</label>
+                    <label><input type="checkbox"> Грамматика</label>
+                    <label><input type="checkbox"> Разговорный</label>
+                    <label><input type="checkbox"> Бизнес</label>
+                    <label><input type="checkbox"> Путешествия</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Сетка курсов -->
+        <div class="course-card-grid">
+            <!-- Курс 1 -->
+            <div class="card course-card">
+                <div class="course-banner beginner"></div>
+                <div class="course-content">
+                    <h3 class="course-title">Beginner English (A1)</h3>
+                    <p class="course-description">Основы английского языка для начинающих. 30 уроков, 120 слов.</p>
+                    <div class="course-meta">
+                        <span class="course-level level-a1">A1</span>
+                        <span class="course-rating">⭐ 4.8 (156 отзывов)</span>
+                    </div>
+                    <div class="course-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <a href="course-detail.html" class="btn btn-primary course-button">Начать курс</a>
+                </div>
+            </div>
+
+            <!-- Курс 2 -->
+            <div class="card course-card">
+                <div class="course-banner elementary"></div>
+                <div class="course-content">
+                    <h3 class="course-title">Elementary Conversation (A2)</h3>
+                    <p class="course-description">Разговорный английский для повседневного общения. 40 уроков.</p>
+                    <div class="course-meta">
+                        <span class="course-level level-a2">A2</span>
+                        <span class="course-rating">⭐ 4.9 (203 отзыва)</span>
+                    </div>
+                    <div class="course-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <a href="course-detail.html" class="btn btn-primary course-button">Начать курс</a>
+                </div>
+            </div>
+
+            <!-- Курс 3 -->
+            <div class="card course-card">
+                <div class="course-banner business"></div>
+                <div class="course-content">
+                    <h3 class="course-title">Business English (B1)</h3>
+                    <p class="course-description">Английский для делового общения и переговоров. 35 уроков.</p>
+                    <div class="course-meta">
+                        <span class="course-level level-b1">B1</span>
+                        <span class="course-rating">⭐ 4.7 (89 отзывов)</span>
+                    </div>
+                    <div class="course-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 25%"></div>
+                        </div>
+                    </div>
+                    <a href="course-detail.html" class="btn btn-primary course-button">Продолжить</a>
+                </div>
+            </div>
+
+            <!-- Курс 4 -->
+            <div class="card course-card">
+                <div class="course-banner travel"></div>
+                <div class="course-content">
+                    <h3 class="course-title">Travel English (A2-B1)</h3>
+                    <p class="course-description">Английский для путешествий. Аэропорт, отель, ресторан. 25 уроков.</p>
+                    <div class="course-meta">
+                        <span class="course-level level-a2-b1">A2-B1</span>
+                        <span class="course-rating">⭐ 4.8 (167 отзывов)</span>
+                    </div>
+                    <div class="course-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    <a href="course-detail.html" class="btn btn-primary course-button">Продолжить</a>
+                </div>
+            </div>
+
+            <!-- Курс 5 -->
+            <div class="card course-card">
+                <div class="course-banner grammar"></div>
+                <div class="course-content">
+                    <h3 class="course-title">Grammar Master (B1)</h3>
+                    <p class="course-description">Углубленное изучение грамматики английского языка. 45 уроков.</p>
+                    <div class="course-meta">
+                        <span class="course-level level-b1">B1</span>
+                        <span class="course-rating">⭐ 4.6 (94 отзыва)</span>
+                    </div>
+                    <div class="course-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <a href="course-detail.html" class="btn btn-primary course-button">Продолжить</a>
+                </div>
+            </div>
+
+            <!-- Курс 6 -->
+            <div class="card course-card">
+                <div class="course-banner ielts"></div>
+                <div class="course-content">
+                    <h3 class="course-title">IELTS Preparation (B2)</h3>
+                    <p class="course-description">Подготовка к международному экзамену IELTS. 50 уроков.</p>
+                    <div class="course-meta">
+                        <span class="course-level level-b2">B2</span>
+                        <span class="course-rating">⭐ 4.9 (210 отзывов)</span>
+                    </div>
+                    <div class="course-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <a href="course-detail.html" class="btn btn-primary course-button">Начать курс</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="unified-footer">
+        <div class="footer-content">
+            <div>
+                <h4>EnglishFreedom</h4>
+                <p>Все курсы английского языка в одном месте</p>
+            </div>
+            <div>
+                <h4>Уровни</h4>
+                <a href="#">A1 - Beginner</a>
+                <a href="#">A2 - Elementary</a>
+                <a href="#">B1 - Intermediate</a>
+                <a href="#">B2 - Upper-Intermediate</a>
+            </div>
+            <div>
+                <h4>Категории</h4>
+                <a href="#">Грамматика</a>
+                <a href="#">Разговорный</a>
+                <a href="#">Бизнес</a>
+                <a href="#">Путешествия</a>
+            </div>
+            <div>
+                <h4>Поддержка</h4>
+                <a href="index.html">Главная</a>
+                <a href="courses.html">Курсы</a>
+                <a href="dashboard.html">Кабинет</a>
+                <a href="progress.html">Прогресс</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 EnglishFreedom. Все права защищены.
+        </div>
+    </footer>
+</body>
+</html>

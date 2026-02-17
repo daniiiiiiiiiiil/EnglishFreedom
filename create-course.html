@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание курса - EnglishFreedom</title>
+    <link rel="stylesheet" href="/style/create-course.css">
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/button.css">
+    <link rel="stylesheet" href="style/components.css">
+    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/footer.css">
+</head>
+<body>
+    <header class="unified-header">
+        <a href="index.html" class="logo">⭐ EnglishFreedom</a>
+        <nav>
+            <a href="teacher-dashboard.html" id="nav-dashboard">Панель</a>
+            <a href="create-course.html" id="nav-courses">Создать курс</a>
+             <a href="create-lesson.html" id="nav-courses">Создать урок</a>
+        </nav>
+        <div class="user-area">
+            <div class="auth-buttons">
+                <a href="index.html" class="btn btn-outline">Выйти</a>
+            </div>
+        </div>
+    </header>
+    
+
+    <main>
+        <h1 style="margin-bottom: 2rem;">Создание нового курса</h1>
+        
+        <div class="card">
+            <form>
+                <div class="form-group">
+                    <label for="course-title">Название курса</label>
+                    <input type="text" id="course-title" class="form-control" placeholder="Например: Intermediate Conversation">
+                </div>
+                
+                <div class="form-group">
+                    <label for="course-description">Описание курса</label>
+                    <textarea id="course-description" class="form-control" rows="4" placeholder="Опишите, чему научатся студенты на этом курсе..."></textarea>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label for="course-level">Уровень сложности</label>
+                        <select id="course-level" class="form-control">
+                            <option>A1 - Beginner</option>
+                            <option>A2 - Elementary</option>
+                            <option>B1 - Intermediate</option>
+                            <option>B2 - Upper-Intermediate</option>
+                            <option>C1 - Advanced</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="course-category">Категория</label>
+                        <select id="course-category" class="form-control">
+                            <option>Разговорный английский</option>
+                            <option>Грамматика</option>
+                            <option>Бизнес английский</option>
+                            <option>Подготовка к экзаменам</option>
+                            <option>Путешествия</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label for="course-duration">Длительность (часы)</label>
+                        <input type="number" id="course-duration" class="form-control" value="20">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="course-price">Цена (руб.)</label>
+                        <input type="number" id="course-price" class="form-control" value="0" placeholder="0 для бесплатного курса">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="course-image">Ссылка на обложку курса</label>
+                    <input type="text" id="course-image" class="form-control" placeholder="https://example.com/image.jpg">
+                </div>
+                
+                <div class="form-group">
+                    <label>Чему научатся студенты (по пунктам)</label>
+                    <div style="margin-top: 0.5rem;">
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="text" class="form-control" placeholder="Например: Освоят времена Present Simple">
+                            <button type="button" style="padding: 0.5rem 1rem; background: var(--light); border: 1px solid var(--border); border-radius: var(--radius); cursor: pointer;">
+                                +
+                            </button>
+                        </div>
+                        <div style="background: var(--light); padding: 1rem; border-radius: var(--radius);">
+                            <div style="margin-bottom: 0.5rem;">✓ Освоят времена Present Simple</div>
+                            <div style="margin-bottom: 0.5rem;">✓ Выучат 500 новых слов</div>
+                            <div>✓ Научатся вести диалоги на бытовые темы</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Программа курса (модули)</label>
+                    <div style="margin-top: 0.5rem;">
+                        <div style="background: var(--light); padding: 1rem; border-radius: var(--radius); margin-bottom: 1rem;">
+                            <h4>Модуль 1: Основы</h4>
+                            <div style="margin-left: 1rem;">
+                                <div>✓ Урок 1: Введение</div>
+                                <div>✓ Урок 2: Алфавит и произношение</div>
+                                <div>✓ Урок 3: Числа и цвета</div>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 0.5rem;">
+                            <input type="text" class="form-control" placeholder="Название нового модуля">
+                            <button type="button" style="padding: 0.5rem 1rem; background: var(--primary); color: white; border: none; border-radius: var(--radius); cursor: pointer;">
+                                + Добавить модуль
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox">
+                        Курс будет доступен сразу после создания
+                    </label>
+                </div>
+                
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" checked>
+                        Выдать сертификат по завершению курса
+                    </label>
+                </div>
+                
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <button type="submit" class="btn btn-primary" style="padding: 1rem 2rem;">
+                        Создать курс
+                    </button>
+                    <button type="button" class="btn btn-outline" style="padding: 1rem 2rem;">
+                        Предпросмотр
+                    </button>
+                    <button type="button" class="btn btn-outline" style="padding: 1rem 2rem;">
+                        Сохранить черновик
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

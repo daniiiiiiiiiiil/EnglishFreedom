@@ -1,0 +1,424 @@
+/* Основной заголовок */
+.settings-header {
+    margin-bottom: 2rem;
+}
+
+.settings-header h1 {
+    font-size: 2.5rem;
+    color: var(--text-main);
+    margin: 0;
+}
+
+/* Основной контейнер настроек */
+.settings-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 992px) {
+    .settings-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Навигация настроек */
+.settings-nav {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    border: 1px solid #333;
+    height: fit-content;
+}
+
+.settings-nav h3 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--accent);
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    margin-bottom: 0.75rem;
+}
+
+.nav-item:last-child {
+    margin-bottom: 0;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-radius: var(--radius);
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    background: #2a2a2a;
+    color: var(--text-main);
+}
+
+.nav-link.active {
+    background: var(--accent);
+    color: white;
+}
+
+.nav-icon {
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+}
+
+/* Основная панель настроек */
+.settings-panel {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 2rem;
+    border: 1px solid #333;
+}
+
+.settings-panel h2 {
+    color: var(--accent);
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--accent);
+}
+
+/* Аватар профиля */
+.profile-avatar {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.avatar-container {
+    position: relative;
+}
+
+.avatar-image {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    border: 3px solid var(--accent);
+}
+
+.avatar-badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: var(--secondary);
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    border: 2px solid var(--bg-card);
+}
+
+.avatar-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.avatar-btn {
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: 1px solid #444;
+    border-radius: var(--radius);
+    color: var(--text-main);
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.avatar-btn:hover {
+    background: #2a2a2a;
+    border-color: #666;
+}
+
+.avatar-btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
+.avatar-btn.primary:hover {
+    background: #a233ff;
+    border-color: #a233ff;
+}
+
+.avatar-btn.danger {
+    color: var(--danger);
+    border-color: var(--danger);
+}
+
+.avatar-btn.danger:hover {
+    background: rgba(239, 68, 68, 0.1);
+}
+
+/* Формы настроек */
+.settings-form {
+    margin-top: 2rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #333;
+}
+
+/* Панель безопасности */
+.security-panel {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 2rem;
+    border: 1px solid #333;
+    margin-top: 2rem;
+}
+
+.security-panel h2 {
+    color: var(--warning);
+    border-bottom-color: var(--warning);
+}
+
+.security-form {
+    margin-top: 1rem;
+}
+
+/* Опасная зона */
+.danger-zone {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 2rem;
+    border: 2px solid var(--danger);
+    margin-top: 2rem;
+    background: rgba(239, 68, 68, 0.05);
+}
+
+.danger-zone h2 {
+    color: var(--danger);
+    border-bottom-color: var(--danger);
+    margin-bottom: 1.5rem;
+}
+
+.danger-warning {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.delete-btn {
+    padding: 1rem 2rem;
+    background: var(--danger);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.delete-btn:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.delete-btn::before {
+    content: "⚠️";
+    font-size: 1.1rem;
+}
+
+/* Переключатели и чекбоксы */
+.switch-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid #333;
+}
+
+.switch-label {
+    flex: 1;
+}
+
+.switch-description {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+/* Стили для переключателя (toggle switch) */
+.toggle-switch {
+    position: relative;
+    width: 60px;
+    height: 30px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #444;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+    background-color: var(--accent);
+}
+
+input:checked + .toggle-slider:before {
+    transform: translateX(30px);
+}
+
+/* Уведомления и настройки внешнего вида */
+.notification-settings,
+.appearance-settings {
+    margin-top: 2rem;
+}
+
+.notification-item,
+.appearance-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid #333;
+}
+
+.notification-item:last-child,
+.appearance-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Настройки темы */
+.theme-options {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.theme-option {
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    padding: 1rem;
+    border: 2px solid #444;
+    border-radius: var(--radius);
+    transition: all 0.3s;
+}
+
+.theme-option:hover {
+    border-color: var(--accent);
+}
+
+.theme-option.active {
+    border-color: var(--accent);
+    background: rgba(185, 76, 255, 0.1);
+}
+
+.theme-preview {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    margin: 0 auto 0.5rem;
+}
+
+.theme-dark {
+    background: #1a1a1a;
+    border: 2px solid #333;
+}
+
+.theme-light {
+    background: #f5f5f5;
+    border: 2px solid #ddd;
+}
+
+.theme-auto {
+    background: linear-gradient(135deg, #1a1a1a 50%, #f5f5f5 50%);
+    border: 2px solid #666;
+}

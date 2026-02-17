@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 3: Числа и цвета - EnglishFreedom</title>
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/button.css">
+    <link rel="stylesheet" href="style/components.css">
+    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="style/lesson.css">
+</head>
+<body>
+    <header class="unified-header">
+        <a href="index.html" class="logo">⭐ EnglishFreedom</a>
+        <nav>
+            <a href="dashboard.html">Кабинет</a>
+            <a href="courses.html">Курсы</a>
+            <a href="vocabulary.html">Словарь</a>
+            <a href="progress.html">Прогресс</a>
+            <a href="lesson.html" class="active">Урок</a>
+        </nav>
+        <div class="user-area">
+            <div class="user-info">
+                <div class="user-avatar">А</div>
+                <div>Александр</div>
+                <div class="user-role student">Студент</div>
+            </div>
+            <div class="auth-buttons">
+                <a href="index.html" class="btn btn-outline">Выйти</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Заголовок урока -->
+        <div class="lesson-header">
+            <div>
+                <h1>Урок 3: Числа и цвета</h1>
+                <p class="lesson-subtitle">Курс: Beginner English (A1)</p>
+            </div>
+            <div class="lesson-progress-info">
+                <div class="progress-bar-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 20%"></div>
+                    </div>
+                </div>
+                <span class="progress-text">20%</span>
+            </div>
+        </div>
+        
+        <!-- Основной контент -->
+        <div class="lesson-container">
+            <!-- Левая колонка -->
+            <div class="lesson-main">
+                <!-- Теория -->
+                <div class="card theory-section">
+                    <h2>Теория</h2>
+                    <div class="theory-content">
+                        <h3>Числа от 1 до 20</h3>
+                        <p>В английском языке числа имеют свои названия:</p>
+                        <ul class="number-list">
+                            <li>1 - one</li>
+                            <li>2 - two</li>
+                            <li>3 - three</li>
+                            <li>4 - four</li>
+                            <li>5 - five</li>
+                        </ul>
+                        
+                        <h3>Основные цвета</h3>
+                        <div class="color-cards">
+                            <div class="color-card red">red - красный</div>
+                            <div class="color-card blue">blue - синий</div>
+                            <div class="color-card green">green - зелёный</div>
+                            <div class="color-card yellow">yellow - жёлтый</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Задания -->
+                <div class="card exercises-section">
+                    <h2>Задания</h2>
+                    <div class="exercises-list">
+                        <!-- Задание 1 -->
+                        <div class="exercise-card">
+                            <h3>Задание 1: Выберите правильный перевод</h3>
+                            <p class="exercise-question">Как будет "красный" на английском?</p>
+                            <div class="options-group" data-exercise="1">
+                                <label class="option-item">
+                                    <input type="radio" name="q1" value="blue"> blue
+                                </label>
+                                <label class="option-item">
+                                    <input type="radio" name="q1" value="green"> green
+                                </label>
+                                <label class="option-item">
+                                    <input type="radio" name="q1" value="red" checked> red
+                                </label>
+                                <label class="option-item">
+                                    <input type="radio" name="q1" value="yellow"> yellow
+                                </label>
+                            </div>
+                            <button class="btn btn-secondary check-btn" data-exercise="1">Проверить ответ</button>
+                            <div class="exercise-feedback" id="feedback-1"></div>
+                        </div>
+                        
+                        <!-- Задание 2 -->
+                        <div class="exercise-card">
+                            <h3>Задание 2: Впишите пропущенное слово</h3>
+                            <p class="exercise-question">The sky is <input type="text" class="blank-input" id="blank-answer" placeholder="_____"> (синий).</p>
+                            <button class="btn btn-secondary check-btn" data-exercise="2">Проверить ответ</button>
+                            <div class="exercise-feedback" id="feedback-2"></div>
+                        </div>
+                        
+                        <!-- Задание 3 -->
+                        <div class="exercise-card">
+                            <h3>Задание 3: Сопоставьте слова</h3>
+                            <p class="exercise-question">Перетащите цвета к их переводам:</p>
+                            <div class="matching-game">
+                                <div class="matching-column">
+                                    <div class="draggable-item" draggable="true" data-word="red">red</div>
+                                    <div class="draggable-item" draggable="true" data-word="green">green</div>
+                                </div>
+                                <div class="matching-column">
+                                    <div class="drop-zone" data-expected="red">жёлтый</div>
+                                    <div class="drop-zone" data-expected="green">зелёный</div>
+                                </div>
+                            </div>
+                            <button class="btn btn-secondary check-btn" data-exercise="3">Проверить ответ</button>
+                            <div class="exercise-feedback" id="feedback-3"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Навигация -->
+                <div class="lesson-navigation">
+                    <a href="lesson.html" class="btn btn-outline">← Предыдущий урок</a>
+                    <a href="lesson.html" class="btn btn-primary">Следующий урок →</a>
+                </div>
+            </div>
+            
+            <!-- Правая колонка -->
+            <div class="lesson-sidebar">
+                <!-- Слова урока -->
+                <div class="card vocabulary-card">
+                    <h3>Слова урока</h3>
+                    <div class="vocabulary-list">
+                        <div class="vocabulary-item">
+                            <span class="word">one</span>
+                            <span class="translation">один</span>
+                        </div>
+                        <div class="vocabulary-item">
+                            <span class="word">red</span>
+                            <span class="translation">красный</span>
+                        </div>
+                        <div class="vocabulary-item">
+                            <span class="word">blue</span>
+                            <span class="translation">синий</span>
+                        </div>
+                        <div class="vocabulary-item">
+                            <span class="word">green</span>
+                            <span class="translation">зелёный</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary add-vocab-btn">Добавить в словарь</button>
+                </div>
+                
+                <!-- Дополнительные материалы -->
+                <div class="card materials-card">
+                    <h3>Дополнительные материалы</h3>
+                    <ul class="materials-list">
+                        <li><a href="#">Видео: Произношение чисел</a></li>
+                        <li><a href="#">Статья: Цвета в английском</a></li>
+                        <li><a href="#">Тест на закрепление</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Прогресс -->
+                <div class="card progress-card">
+                    <h3>Прогресс урока</h3>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%"></div>
+                        </div>
+                    </div>
+                    <div class="progress-info">Завершено: 3/5 заданий</div>
+                    <button class="btn btn-secondary complete-lesson-btn">Завершить урок</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="unified-footer">
+        <div class="footer-content">
+            <div>
+                <h4>EnglishFreedom</h4>
+                <p>Учите английский эффективно</p>
+            </div>
+            <div>
+                <h4>Курсы</h4>
+                <a href="courses.html">Все курсы</a>
+                <a href="course-detail.html">Beginner English</a>
+                <a href="course-detail.html">Business English</a>
+            </div>
+            <div>
+                <h4>Обучение</h4>
+                <a href="lesson.html">Уроки</a>
+                <a href="exercise.html">Упражнения</a>
+                <a href="test.html">Тесты</a>
+            </div>
+            <div>
+                <h4>Поддержка</h4>
+                <a href="#">FAQ</a>
+                <a href="#">Контакты</a>
+                <a href="#">О нас</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 EnglishFreedom. Все права защищены.
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.check-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const exercise = this.dataset.exercise;
+                    const feedback = document.getElementById(`feedback-${exercise}`);
+                    
+                    if (exercise === '1') {
+                        const selected = document.querySelector('input[name="q1"]:checked');
+                        if (selected && selected.value === 'red') {
+                            feedback.innerHTML = ' Правильно! red - это красный';
+                            feedback.className = 'exercise-feedback correct';
+                        } else {
+                            feedback.innerHTML = ' Неправильно. Правильный ответ: red';
+                            feedback.className = 'exercise-feedback incorrect';
+                        }
+                    }
+                    
+                    if (exercise === '2') {
+                        const answer = document.getElementById('blank-answer').value.toLowerCase();
+                        if (answer === 'blue') {
+                            feedback.innerHTML = 'Правильно! The sky is blue';
+                            feedback.className = 'exercise-feedback correct';
+                        } else {
+                            feedback.innerHTML = 'Неправильно. Правильный ответ: blue';
+                            feedback.className = 'exercise-feedback incorrect';
+                        }
+                    }
+                });
+            });
+            
+            const draggables = document.querySelectorAll('.draggable-item');
+            const dropZones = document.querySelectorAll('.drop-zone');
+            
+            draggables.forEach(item => {
+                item.addEventListener('dragstart', e => {
+                    e.dataTransfer.setData('text/plain', item.dataset.word);
+                });
+            });
+            
+            dropZones.forEach(zone => {
+                zone.addEventListener('dragover', e => e.preventDefault());
+                zone.addEventListener('drop', e => {
+                    e.preventDefault();
+                    const word = e.dataTransfer.getData('text/plain');
+                    zone.textContent = word;
+                    zone.classList.add('filled');
+                });
+            });
+            
+            document.querySelector('.add-vocab-btn')?.addEventListener('click', () => {
+                alert('Слова добавлены в ваш словарь!');
+            });
+            
+            document.querySelector('.complete-lesson-btn')?.addEventListener('click', () => {
+                if (confirm('Завершить урок?')) {
+                    alert('Урок завершен! Прогресс сохранен.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

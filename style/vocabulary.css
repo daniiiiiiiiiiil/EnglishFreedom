@@ -1,0 +1,486 @@
+/* Основной заголовок */
+.vocabulary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.vocabulary-header h1 {
+    font-size: 2.5rem;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.vocabulary-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.search-box {
+    width: 300px;
+    max-width: 100%;
+}
+
+.add-word-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.add-word-btn:hover {
+    background: #a233ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(185, 76, 255, 0.3);
+}
+
+.add-word-btn::before {
+    content: "+";
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Фильтры словаря */
+.vocabulary-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.5rem;
+    background: transparent;
+    border: 1px solid #444;
+    border-radius: 999px;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.filter-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.filter-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
+/* Основная таблица слов */
+.vocabulary-table-container {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    border: 1px solid #333;
+    margin-bottom: 2rem;
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.table-header h2 {
+    font-size: 1.4rem;
+    color: var(--accent);
+    margin: 0;
+}
+
+.total-words {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.sort-select {
+    width: 250px;
+    max-width: 100%;
+}
+
+/* Таблица */
+.vocabulary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+.vocabulary-table thead {
+    background: #2a2a2a;
+}
+
+.vocabulary-table th {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #444;
+}
+
+.vocabulary-table tbody tr {
+    border-bottom: 1px solid #333;
+    transition: background 0.3s;
+}
+
+.vocabulary-table tbody tr:hover {
+    background: #2a2a2a;
+}
+
+.vocabulary-table td {
+    padding: 1rem 1.5rem;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    vertical-align: middle;
+}
+
+.word-english {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--accent);
+}
+
+.word-transcription {
+    color: var(--text-muted);
+    font-family: monospace;
+    font-size: 0.9rem;
+}
+
+.word-translation {
+    font-weight: 500;
+}
+
+.word-course {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Статусы слов */
+.word-status {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    min-width: 80px;
+    text-align: center;
+}
+
+.status-learned {
+    background: rgba(16, 185, 129, 0.2);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+}
+
+.status-learning {
+    background: rgba(245, 158, 11, 0.2);
+    color: var(--warning);
+    border: 1px solid var(--warning);
+}
+
+.status-difficult {
+    background: rgba(239, 68, 68, 0.2);
+    color: var(--danger);
+    border: 1px solid var(--danger);
+}
+
+/* Действия со словами */
+.word-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    padding: 0.25rem 0.75rem;
+    background: transparent;
+    border: 1px solid #444;
+    border-radius: var(--radius);
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.action-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.action-btn.review::before {
+    content: "🔄";
+    font-size: 0.9rem;
+}
+
+.action-btn.edit::before {
+    content: "✏️";
+    font-size: 0.9rem;
+}
+
+.action-btn.delete::before {
+    content: "🗑️";
+    font-size: 0.9rem;
+}
+
+/* Пагинация */
+.vocabulary-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #333;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.pagination-info {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.pagination-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.pagination-btn {
+    min-width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid #444;
+    border-radius: 4px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.pagination-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.pagination-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
+.pagination-btn.prev::before {
+    content: "←";
+}
+
+.pagination-btn.next::before {
+    content: "→";
+}
+
+/* Блоки тренировки и статистики */
+.vocabulary-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 992px) {
+    .vocabulary-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Блок повторения */
+.practice-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    border: 1px solid #333;
+    height: 100%;
+}
+
+.practice-card h2 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.practice-description {
+    color: var(--text-muted);
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+
+.practice-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.practice-btn {
+    padding: 1rem 2rem;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    flex: 1;
+    min-width: 160px;
+    text-align: center;
+}
+
+.practice-btn:hover {
+    background: #a233ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(185, 76, 255, 0.3);
+}
+
+.practice-btn.outline {
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+}
+
+.practice-btn.outline:hover {
+    background: rgba(185, 76, 255, 0.1);
+}
+
+/* Блок статистики */
+.stats-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    border: 1px solid #333;
+    height: 100%;
+}
+
+.stats-card h2 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+}
+
+.stats-list {
+    margin-top: 1rem;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #333;
+}
+
+.stat-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.stat-label {
+    color: var(--text-muted);
+}
+
+.stat-value {
+    font-weight: 600;
+    color: var(--text-main);
+    font-size: 1.1rem;
+}
+
+.stat-value.learned {
+    color: var(--secondary);
+}
+
+.stat-value.learning {
+    color: var(--warning);
+}
+
+.stat-value.difficult {
+    color: var(--danger);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .vocabulary-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .vocabulary-actions {
+        width: 100%;
+    }
+    
+    .search-box {
+        width: 100%;
+    }
+    
+    .add-word-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .vocabulary-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .vocabulary-pagination {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .pagination-controls {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .vocabulary-table th,
+    .vocabulary-table td {
+        padding: 0.75rem 1rem;
+    }
+    
+    .practice-actions {
+        flex-direction: column;
+    }
+    
+    .practice-btn {
+        width: 100%;
+    }
+    
+    .word-actions {
+        flex-direction: column;
+    }
+}
